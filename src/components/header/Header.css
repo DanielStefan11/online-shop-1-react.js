@@ -49,10 +49,11 @@ header .logout:hover {
   padding: 0.5rem 1rem;
   border-radius: 7px;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 .link-item:hover {
-  background-color: #D6E9F2;
+  background-color: #d6e9f2;
 }
 
 .dropdown-wrapper * {

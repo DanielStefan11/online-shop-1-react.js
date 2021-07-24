@@ -1,6 +1,6 @@
 import React from "react";
 // React Router
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 // Images & icons
 import Logo from "../../assets/images/logo-2.png";
 // CSS
@@ -25,8 +25,8 @@ import Overlay from "./Overlay";
 import products from "../../utils/products.json";
 
 class Header extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       categories: [],
     };
@@ -80,22 +80,22 @@ class Header extends React.Component {
                   onMouseLeave={() => this.props.closeMenuDropdown()}
                 >
                   {this.state.categories.map((categoryItem, index) => (
-                    <div className="link-item">
-                      <Link
-                        key={index}
-                        to={`/category/${categoryItem}`}
-                        onClick={() => this.props.closeMenuDropdown()}
-                      >
-                        {(() => {
-                          if (categoryItem === laptops) return "Laptops";
-                          if (categoryItem === smartphones)
-                            return "Smartphones";
-                          if (categoryItem === pcs) return "PCs";
-                          if (categoryItem === accesories) return "Accessories";
-                          if (categoryItem === smarttvs) return "Smart TVs";
-                          if (categoryItem === cameras) return "Photo/Video";
-                        })()}
-                      </Link>
+                    <div
+                      className="link-item"
+                      key={index}
+                      onClick={() => {
+                        this.props.history.push(`/category/${categoryItem}`);
+                        this.props.closeMenuDropdown();
+                      }}
+                    >
+                      {(() => {
+                        if (categoryItem === laptops) return "Laptops";
+                        if (categoryItem === smartphones) return "Smartphones";
+                        if (categoryItem === pcs) return "PCs";
+                        if (categoryItem === accesories) return "Accessories";
+                        if (categoryItem === smarttvs) return "Smart TVs";
+                        if (categoryItem === cameras) return "Photo/Video";
+                      })()}
                     </div>
                   ))}
                 </div>
@@ -185,4 +185,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Header));
