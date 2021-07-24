@@ -80,20 +80,23 @@ class Header extends React.Component {
                   onMouseLeave={() => this.props.closeMenuDropdown()}
                 >
                   {this.state.categories.map((categoryItem, index) => (
-                    <Link
-                      key={index}
-                      to={`/category/${categoryItem}`}
-                      onClick={() => this.props.closeMenuDropdown()}
-                    >
-                      {(() => {
-                        if (categoryItem === laptops) return "Laptops";
-                        if (categoryItem === smartphones) return "Smartphones";
-                        if (categoryItem === pcs) return "PCs";
-                        if (categoryItem === accesories) return "Accessories";
-                        if (categoryItem === smarttvs) return "Smart TVs";
-                        if (categoryItem === cameras) return "Photo/Video";
-                      })()}
-                    </Link>
+                    <div className="link-item">
+                      <Link
+                        key={index}
+                        to={`/category/${categoryItem}`}
+                        onClick={() => this.props.closeMenuDropdown()}
+                      >
+                        {(() => {
+                          if (categoryItem === laptops) return "Laptops";
+                          if (categoryItem === smartphones)
+                            return "Smartphones";
+                          if (categoryItem === pcs) return "PCs";
+                          if (categoryItem === accesories) return "Accessories";
+                          if (categoryItem === smarttvs) return "Smart TVs";
+                          if (categoryItem === cameras) return "Photo/Video";
+                        })()}
+                      </Link>
+                    </div>
                   ))}
                 </div>
               )}

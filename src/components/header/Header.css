@@ -37,12 +37,22 @@ header .logout:hover {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 1rem;
   z-index: 20;
   border: 1px solid #6a8ed9;
   background-color: #fff;
   border-radius: 15px;
   width: 250px;
+}
+
+.link-item {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: 7px;
+  transition: all 0.2s ease-in-out;
+}
+
+.link-item:hover {
+  background-color: #D6E9F2;
 }
 
 .dropdown-wrapper * {
