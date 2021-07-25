@@ -222,24 +222,24 @@
     "items": [
       {
         "id": 19,
-        "name": "Căști JBL JR300",
+        "name": "Headphones JBL JR300",
         "price": 130,
         "currency": "LEI",
         "image": "https://i.imgur.com/9GHQ3dp.jpg",
         "colour": "Ice Blue",
         "brand": "JBL",
-        "description": "Căști over-the-ear cu fir",
+        "description": "Headphones over-the-ear cu fir",
         "stock": 100
       },
       {
         "id": 20,
-        "name": "Tastatură Logitech K120",
+        "name": "Keyboard Logitech K120",
         "price": 52,
         "currency": "LEI",
         "image": "https://i.imgur.com/i5g5JUe.jpg",
         "colour": "Black",
         "brand": "Logitech",
-        "description": "Tastatură business cu fir pe USB",
+        "description": "Keyboard business cu fir pe USB",
         "stock": 300
       },
       {

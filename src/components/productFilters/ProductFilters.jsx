@@ -20,6 +20,14 @@ class ProductFilters extends React.Component {
           name: "descendFilter",
           checked: false,
         },
+        {
+          name: "moreThan5000",
+          checked: false,
+        },
+        {
+          name: "lessThan5000",
+          checked: false,
+        },
       ],
     };
   }
@@ -68,6 +76,8 @@ class ProductFilters extends React.Component {
   }
 
   render() {
+    const { sortProductsAscending } = this.props;
+
     return (
       <div
         className="h-100 bg-white p-3 d-flex flex-column product-filters"
@@ -90,8 +100,8 @@ class ProductFilters extends React.Component {
           <label className="mb-3">
             <input
               type="checkbox"
-              name="ascendFilter"
-              checked={this.getCheckedValue("ascendFilter")}
+              name="lessThan5000"
+              checked={this.getCheckedValue("lessThan5000")}
               className="mr-2"
               onChange={(event) => {
                 this.changeProducts(event, 0, 5000);
@@ -103,8 +113,8 @@ class ProductFilters extends React.Component {
           <label className="mb-3">
             <input
               type="checkbox"
-              name="descendFilter"
-              checked={this.getCheckedValue("descendFilter")}
+              name="moreThan5000"
+              checked={this.getCheckedValue("moreThan5000")}
               className="mr-2"
               onChange={(event) => {
                 this.changeProducts(event, 5000, Infinity);
@@ -118,10 +128,23 @@ class ProductFilters extends React.Component {
         <div className="w-100 d-flex flex-column mb-5">
           <h5 className="mb-3">Sort by Name:</h5>
           <label className="mb-3">
-            <input type="checkbox" className="mr-2" />A - Z
+            <input
+              type="checkbox"
+              name="ascendFilter"
+              checked={this.getCheckedValue("ascendFilter")}
+              className="mr-2"
+              onChange={sortProductsAscending}
+            />
+            A - Z
           </label>
           <label className="mb-3">
-            <input type="checkbox" className="mr-2" />Z - A
+            <input
+              type="checkbox"
+              name="descendFilter"
+              checked={this.getCheckedValue("descendFilter")}
+              className="mr-2"
+            />
+            Z - A
           </label>
         </div>
 

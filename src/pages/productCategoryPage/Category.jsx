@@ -37,7 +37,17 @@ class Category extends Component {
     this.setState({ filteredItems });
   }
 
+  sortProductsAscending = () => {
+    this.setState((prevState) => {
+      return {
+        filteredItems: prevState.items.map((product) => product.name).sort(),
+      };
+    });
+  };
+
   render() {
+    // console.log("items: ", this.state.items);
+
     return (
       <Layout>
         <div className="container-fluid container-min-max-width">
@@ -51,7 +61,10 @@ class Category extends Component {
             </button>
           </div>
           <FiltersMenuOverlay />
-          <ProductFilters filterProducts={(low, high) => this.filterProducts(low, high)} />
+          <ProductFilters
+            filterProducts={(low, high) => this.filterProducts(low, high)}
+            sortProductsAscending={this.sortProductsAscending}
+          />
           <ProductList products={this.state.filteredItems} />
         </div>
       </Layout>
