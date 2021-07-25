@@ -16,6 +16,7 @@ class Category extends Component {
     this.state = {
       category: {},
       items: [],
+      filteredItems: [],
     };
   }
 
@@ -25,7 +26,15 @@ class Category extends Component {
     this.setState({
       category: products[categoryName],
       items: products[categoryName].items,
+      filteredItems: products[categoryName].items,
     });
+  }
+
+  filterProducts(lowerLimit, upperLimit) {
+    const filteredItems = this.state.items.filter(
+      (product) => product.price >= lowerLimit && product.price < upperLimit
+    );
+    this.setState({ filteredItems });
   }
 
   render() {
@@ -42,8 +51,8 @@ class Category extends Component {
             </button>
           </div>
           <FiltersMenuOverlay />
-          <ProductFilters />
-          <ProductList products={this.state.items} />
+          <ProductFilters filterProducts={(low, high) => this.filterProducts(low, high)} />
+          <ProductList products={this.state.filteredItems} />
         </div>
       </Layout>
     );

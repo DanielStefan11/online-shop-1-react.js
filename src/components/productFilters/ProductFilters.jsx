@@ -7,55 +7,135 @@ import { toggleFilterMenu } from "../../redux/filters/FiltersActions";
 // components
 import { VscClose as CloseIcon } from "react-icons/vsc";
 
-const ProductFilters = (props) => {
-  return (
-    <div
-      className="h-100 bg-white p-3 d-flex flex-column product-filters"
-      style={
-        props.filtersMenuShowed
-          ? { left: "0px", opacity: "0.96" }
-          : { transform: "translateX(-1000px)", opacity: "0" }
+class ProductFilters extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      filters: [
+        {
+          name: "ascendFilter",
+          checked: false,
+        },
+        {
+          name: "descendFilter",
+          checked: false,
+        },
+      ],
+    };
+  }
+
+  getCheckedValue(name) {
+    const selectedFilter = this.state.filters.find(
+      (filter) => filter.name === name
+    );
+    return selectedFilter.checked;
+  }
+
+  handleCheckboxUiChange(name) {
+    const filters = this.state.filters;
+    const modifiedFilters = filters.map((filter) => {
+      if (filter.name !== name && filter.checked) {
+        return {
+          ...filter,
+          checked: false,
+        };
+      } else if (filter.name === name) {
+        if (filter.checked) {
+          return {
+            ...filter,
+            checked: false,
+          };
+        } else {
+          return {
+            ...filter,
+            checked: true,
+          };
+        }
+      } else {
+        return filter;
       }
-    >
-      <div className="w-100 d-flex justify-content-end">
-        <CloseIcon
-          className="close-icon"
-          onClick={() => props.toggleMenuFilter()}
-        />
-      </div>
-      <h4 className="text-center mt-4 mb-5 ">Filter Products</h4>
+    });
+    this.setState({ filters: modifiedFilters });
+  }
 
-      <div className="w-100 d-flex flex-column mb-5">
-        <h5 className="mb-3">Sort by Price:</h5>
-        <label className="mb-3">
-          <input type="checkbox" className="mr-2" />0 - 10000
-        </label>
-        <label className="mb-3">
-          <input type="checkbox" className="mr-2" />
-          10000 - 0
-        </label>
-      </div>
+  changeProducts(event, lowerLimit, upperLimit) {
+    if (event.target.checked) {
+      this.props.filterProducts(lowerLimit, upperLimit);
+    } else {
+      this.props.filterProducts(0, Infinity);
+    }
+    this.handleCheckboxUiChange(event.target.name);
+  }
 
-      <div className="w-100 d-flex flex-column mb-5">
-        <h5 className="mb-3">Sort by Name:</h5>
-        <label className="mb-3">
-          <input type="checkbox" className="mr-2" />A - Z
-        </label>
-        <label className="mb-3">
-          <input type="checkbox" className="mr-2" />Z - A
-        </label>
-      </div>
+  render() {
+    return (
+      <div
+        className="h-100 bg-white p-3 d-flex flex-column product-filters"
+        style={
+          this.props.filtersMenuShowed
+            ? { left: "0px", opacity: "0.96" }
+            : { transform: "translateX(-1000px)", opacity: "0" }
+        }
+      >
+        <div className="w-100 d-flex justify-content-end">
+          <CloseIcon
+            className="close-icon"
+            onClick={() => this.props.toggleMenuFilter()}
+          />
+        </div>
+        <h4 className="text-center mt-4 mb-5 ">Filter Products</h4>
 
-      <div className="w-100 d-flex flex-column mb-5">
-        <h5 className="mb-3">In Stock:</h5>
-        <label className="mb-3">
-          <input type="checkbox" className="mr-2" />
-          In stock
-        </label>
+        <div className="w-100 d-flex flex-column mb-5">
+          <h5 className="mb-3">Sort by Price:</h5>
+          <label className="mb-3">
+            <input
+              type="checkbox"
+              name="ascendFilter"
+              checked={this.getCheckedValue("ascendFilter")}
+              className="mr-2"
+              onChange={(event) => {
+                this.changeProducts(event, 0, 5000);
+                this.props.toggleMenuFilter();
+              }}
+            />
+            {`< 5000 Lei`}
+          </label>
+          <label className="mb-3">
+            <input
+              type="checkbox"
+              name="descendFilter"
+              checked={this.getCheckedValue("descendFilter")}
+              className="mr-2"
+              onChange={(event) => {
+                this.changeProducts(event, 5000, Infinity);
+                this.props.toggleMenuFilter();
+              }}
+            />
+            {`> 5000 Lei`}
+          </label>
+        </div>
+
+        <div className="w-100 d-flex flex-column mb-5">
+          <h5 className="mb-3">Sort by Name:</h5>
+          <label className="mb-3">
+            <input type="checkbox" className="mr-2" />A - Z
+          </label>
+          <label className="mb-3">
+            <input type="checkbox" className="mr-2" />Z - A
+          </label>
+        </div>
+
+        <div className="w-100 d-flex flex-column mb-5">
+          <h5 className="mb-3">In Stock:</h5>
+          <label className="mb-3">
+            <input type="checkbox" className="mr-2" />
+            In stock
+          </label>
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 const mapStateToProps = (state) => {
   return {
