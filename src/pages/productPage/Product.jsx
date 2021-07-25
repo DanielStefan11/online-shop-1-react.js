@@ -3,6 +3,8 @@ import React from "react";
 import products from "../../utils/products.json";
 // Components
 import Layout from "../../components/layout/Layout";
+import { FaShoppingCart as CartICon } from "react-icons/fa";
+import { AiFillHeart as HeartIcon } from "react-icons/ai";
 // CSS
 import "./Product.css";
 // Redux
@@ -69,6 +71,7 @@ class Product extends React.Component {
                   }}
                 >
                   Add to cart
+                  <CartICon className="ml-2 mb-0 h5" />
                 </button>
                 {!foundProduct ? (
                   <button
@@ -78,6 +81,7 @@ class Product extends React.Component {
                     }}
                   >
                     Add to favorites
+                    <HeartIcon className="ml-2 mb-0 h5" />
                   </button>
                 ) : (
                   <button
@@ -87,6 +91,7 @@ class Product extends React.Component {
                     }}
                   >
                     Remove from favorites
+                    <HeartIcon className="ml-2 mb-0 h5" />
                   </button>
                 )}
               </div>

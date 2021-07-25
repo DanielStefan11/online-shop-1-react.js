@@ -5,6 +5,10 @@ import products from "../../utils/products.json";
 import Layout from "../../components/layout/Layout";
 import ProductList from "../../components/productList/ProductList";
 import ProductFilters from "../../components/productFilters/ProductFilters";
+import FiltersMenuOverlay from "../../components/productFilters/FiltersMenuOverlay";
+// redux
+import { connect } from "react-redux";
+import { toggleFilterMenu } from "../../redux/filters/FiltersActions";
 
 class Category extends Component {
   constructor(props) {
@@ -12,13 +16,6 @@ class Category extends Component {
     this.state = {
       category: {},
       items: [],
-      // filters data
-      laptopsByName: [
-        {
-          label: "",
-          value: "",
-        },
-      ],
     };
   }
 
@@ -36,6 +33,15 @@ class Category extends Component {
       <Layout>
         <div className="container-fluid container-min-max-width">
           <h2 className="text-center mt-5 mb-3">{this.state.category.name}</h2>
+          <div className="w-100 d-flex justify-content-center justify-content-sm-center justify-content-lg-start ">
+            <button
+              className="btn btn-info"
+              onClick={() => this.props.toggleMenuFilter()}
+            >
+              Filter/Sort Products
+            </button>
+          </div>
+          <FiltersMenuOverlay />
           <ProductFilters />
           <ProductList products={this.state.items} />
         </div>
@@ -44,4 +50,16 @@ class Category extends Component {
   }
 }
 
-export default Category;
+const mapStateToProps = (state) => {
+  return {
+    filtersMenuShowed: state.filtersMenu.filterShow,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    toggleMenuFilter: () => dispatch(toggleFilterMenu()),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Category);

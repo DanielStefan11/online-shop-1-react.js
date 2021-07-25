@@ -24,3 +24,6 @@ export const CLOSE_MENU = "CLOSE_MENU";
 export const OPEN_MENU_DROPDOWN = "OPEN_MENU_DROPDOWN";
 
 export const CLOSE_MENU_DROPDOWN = "CLOSE_MENU_DROPDOWN";
+
+// filters
+export const TOGGLE_FILTERS_MENU = "TOGGLE_FILTERS_MENU";

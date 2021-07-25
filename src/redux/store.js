@@ -5,6 +5,7 @@ import { userReducer } from "./user/UserReducer";
 import { favoritesReducer } from "./favorites/FavoritesReducer";
 import { mobileMenuReducer } from "./mobileMenu/MobileMenuReducer";
 import { menuDropdownReducer } from "./menuDropdown/MenuDropdownReducer";
+import { filtersReducer } from "./filters/FiltersReducer";
 // Redux Thunk
 import thunk from "redux-thunk";
 import logger from "redux-logger";
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   favorites: favoritesReducer,
   mobileMenu: mobileMenuReducer,
   menuDropdown: menuDropdownReducer,
+  filtersMenu: filtersReducer,
 });
 
 const middlewares = [thunk];

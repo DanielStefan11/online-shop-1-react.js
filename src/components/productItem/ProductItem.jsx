@@ -12,6 +12,7 @@ import {
 } from "../../redux/favorites/FavoritesActions";
 // React Icons
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
+import { FaShoppingCart as CartICon } from "react-icons/fa";
 
 function ProductItem(props) {
   const { name, price, currency, image, id, favoriteProducts } = props;
@@ -48,6 +49,7 @@ function ProductItem(props) {
         }
       >
         Add to cart
+        <CartICon className="ml-2 mb-0 h5" />
       </button>
       <div className="favorites-btn-container">
         {!foundProduct ? (

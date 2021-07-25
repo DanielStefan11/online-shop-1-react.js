@@ -11,7 +11,6 @@ import { closeMenu } from "../../redux/mobileMenu/MobileMenuActions";
 import {
   openMenuDropdown,
   closeMenuDropdown,
-  // toggleMobileDropdown,
 } from "../../redux/menuDropdown/MenuDropdownActions";
 
 const MobileMenu = (props) => {

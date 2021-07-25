@@ -75,7 +75,6 @@ header .logout:hover {
   position: fixed;
   top: 0;
   right: 0;
-  width: 50%;
   height: 100%;
   padding: 1.5rem;
   display: flex;
@@ -91,6 +90,30 @@ header .logout:hover {
 }
 
 /* Media queries */
+@media screen and (max-width: 400px) {
+  .mobile-menu {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 401px) and (max-width: 550px) {
+  .mobile-menu {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 551px) and (max-width: 770px) {
+  .mobile-menu {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 771px) {
+  .mobile-menu {
+    width: 25%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .added-products-icons {
     font-size: 1.5rem;
