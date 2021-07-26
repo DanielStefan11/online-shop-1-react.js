@@ -11,12 +11,12 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  cart: cartReducer,
-  favorites: favoritesReducer,
-  mobileMenu: mobileMenuReducer,
-  menuDropdown: menuDropdownReducer,
-  filtersMenu: filtersReducer,
+   user: userReducer,
+   cart: cartReducer,
+   favorites: favoritesReducer,
+   mobileMenu: mobileMenuReducer,
+   menuDropdown: menuDropdownReducer,
+   filtersMenu: filtersReducer,
 });
 
 const middlewares = [thunk];

@@ -17,79 +17,83 @@ import TermsAndConditions from "./pages/terms&conditionsPage/TermsAndConditions"
 import Contact from "./pages/contactPage/Contact";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      scrollBtnVizibility: false,
-    };
-  }
+   constructor() {
+      super();
+      this.state = {
+         scrollBtnVizibility: false,
+      };
+   }
 
-  componentDidMount() {
-    document.addEventListener("scroll", (e) => {
-      this.toggleVisibility();
-    });
-  }
+   componentDidMount() {
+      document.addEventListener("scroll", e => {
+         this.toggleVisibility();
+      });
+   }
 
-  toggleVisibility() {
-    if (window.pageYOffset > 200) {
-      this.setState({ scrollBtnVizibility: true });
-    } else {
-      this.setState({ scrollBtnVizibility: false });
-    }
-  }
+   toggleVisibility() {
+      if (window.pageYOffset > 200) {
+         this.setState({ scrollBtnVizibility: true });
+      } else {
+         this.setState({ scrollBtnVizibility: false });
+      }
+   }
 
-  handleScrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
+   handleScrollToTop() {
+      window.scrollTo({
+         top: 0,
+         behavior: "smooth",
+      });
+   }
 
-  render() {
-    return (
-      <div className="app">
-        <Switch>
-          <Route
-            exact
-            path="/"
-            render={() => (
-              <Home
-                scrollBtnVizibility={this.state.scrollBtnVizibility}
-                handleScrollToTop={() => this.handleScrollToTop()}
-              />
-            )}
-          />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/cart" component={Cart} />
-          <Route exact path="/favorite" component={Favorites} />
-          <Route
-            exact
-            path="/about"
-            render={() => (
-              <About
-                scrollBtnVizibility={this.state.scrollBtnVizibility}
-                handleScrollToTop={() => this.handleScrollToTop()}
-              />
-            )}
-          />
-          <Route exact path="/contact" component={Contact} />
-          <Route
-            exact
-            path="/termeni-si-conditii"
-            render={() => (
-              <TermsAndConditions
-                scrollBtnVizibility={this.state.scrollBtnVizibility}
-                handleScrollToTop={() => this.handleScrollToTop()}
-              />
-            )}
-          />
-          <Route exact path="/category/:categoryName" component={Category} />
-          <Route exact path="/product/:productId" component={Product} />
-          <Route exact path="*" component={Page404} />
-        </Switch>
-      </div>
-    );
-  }
+   render() {
+      return (
+         <div className="app">
+            <Switch>
+               <Route
+                  exact
+                  path="/"
+                  render={() => (
+                     <Home
+                        scrollBtnVizibility={this.state.scrollBtnVizibility}
+                        handleScrollToTop={() => this.handleScrollToTop()}
+                     />
+                  )}
+               />
+               <Route exact path="/login" component={Login} />
+               <Route exact path="/cart" component={Cart} />
+               <Route exact path="/favorite" component={Favorites} />
+               <Route
+                  exact
+                  path="/about"
+                  render={() => (
+                     <About
+                        scrollBtnVizibility={this.state.scrollBtnVizibility}
+                        handleScrollToTop={() => this.handleScrollToTop()}
+                     />
+                  )}
+               />
+               <Route exact path="/contact" component={Contact} />
+               <Route
+                  exact
+                  path="/termeni-si-conditii"
+                  render={() => (
+                     <TermsAndConditions
+                        scrollBtnVizibility={this.state.scrollBtnVizibility}
+                        handleScrollToTop={() => this.handleScrollToTop()}
+                     />
+                  )}
+               />
+               <Route
+                  exact
+                  path="/category/:categoryName"
+                  component={Category}
+               />
+               <Route exact path="/product/:productId" component={Product} />
+               <Route exact path="*" component={Page404} />
+            </Switch>
+         </div>
+      );
+   }
 }
 
 export default App;

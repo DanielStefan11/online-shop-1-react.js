@@ -1,5 +1,5 @@
 const firebaseConfig = {
-  // firebase config
+   // firebase config
 };
 
 export default firebaseConfig;

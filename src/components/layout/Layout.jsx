@@ -9,20 +9,20 @@ import "./Layout.css";
 import { connect } from "react-redux";
 
 function Layout(props) {
-  return (
-    <div className="layout">
-      <Header />
-      {props.user && <LoggingMessage />}
-      {props.children}
-      <Footer />
-    </div>
-  );
+   return (
+      <div className="layout">
+         <Header />
+         {props.user && <LoggingMessage />}
+         {props.children}
+         <Footer />
+      </div>
+   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user.data,
-  };
+const mapStateToProps = state => {
+   return {
+      user: state.user.data,
+   };
 };
 
 export default connect(mapStateToProps, null)(Layout);

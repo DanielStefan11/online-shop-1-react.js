@@ -1,9 +1,9 @@
 @media (max-width: 768px) {
-  .form-container {
-    flex-direction: column;
-  }
+   .form-container {
+      flex-direction: column;
+   }
 
-  .contact-info {
-    margin-top: 1rem;
-  }
+   .contact-info {
+      margin-top: 1rem;
+   }
 }

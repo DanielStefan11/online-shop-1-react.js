@@ -1,13 +1,13 @@
 import { OPEN_MENU, CLOSE_MENU } from "../reduxConstants";
 
 export const openMenu = () => {
-  return {
-    type: OPEN_MENU,
-  };
+   return {
+      type: OPEN_MENU,
+   };
 };
 
 export const closeMenu = () => {
-  return {
-    type: CLOSE_MENU,
-  };
+   return {
+      type: CLOSE_MENU,
+   };
 };

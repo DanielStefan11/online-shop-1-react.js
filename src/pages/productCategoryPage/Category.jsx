@@ -11,77 +11,79 @@ import { connect } from "react-redux";
 import { toggleFilterMenu } from "../../redux/filters/FiltersActions";
 
 class Category extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      category: {},
-      items: [],
-      filteredItems: [],
-    };
-  }
-
-  componentDidMount() {
-    const { match } = this.props;
-    const categoryName = match.params.categoryName;
-    this.setState({
-      category: products[categoryName],
-      items: products[categoryName].items,
-      filteredItems: products[categoryName].items,
-    });
-  }
-
-  filterProducts(lowerLimit, upperLimit) {
-    const filteredItems = this.state.items.filter(
-      (product) => product.price >= lowerLimit && product.price < upperLimit
-    );
-    this.setState({ filteredItems });
-  }
-
-  sortProductsAscending = () => {
-    this.setState((prevState) => {
-      return {
-        filteredItems: prevState.items.map((product) => product.name).sort(),
+   constructor(props) {
+      super(props);
+      this.state = {
+         category: {},
+         items: [],
+         filteredItems: [],
       };
-    });
-  };
+   }
 
-  render() {
-    // console.log("items: ", this.state.items);
+   componentDidMount() {
+      const { match } = this.props;
+      const categoryName = match.params.categoryName;
+      this.setState({
+         category: products[categoryName],
+         items: products[categoryName].items,
+         filteredItems: products[categoryName].items,
+      });
+   }
 
-    return (
-      <Layout>
-        <div className="container-fluid container-min-max-width">
-          <h2 className="text-center mt-5 mb-3">{this.state.category.name}</h2>
-          <div className="w-100 d-flex justify-content-center justify-content-sm-center justify-content-lg-start ">
-            <button
-              className="btn btn-info"
-              onClick={() => this.props.toggleMenuFilter()}
-            >
-              Filter/Sort Products
-            </button>
-          </div>
-          <FiltersMenuOverlay />
-          <ProductFilters
-            filterProducts={(low, high) => this.filterProducts(low, high)}
-            sortProductsAscending={this.sortProductsAscending}
-          />
-          <ProductList products={this.state.filteredItems} />
-        </div>
-      </Layout>
-    );
-  }
+   filterProducts(lowerLimit, upperLimit) {
+      const filteredItems = this.state.items.filter(
+         product => product.price >= lowerLimit && product.price < upperLimit
+      );
+      this.setState({ filteredItems });
+   }
+
+   sortProductsAscending = () => {
+      this.setState(prevState => {
+         return {
+            filteredItems: prevState.items.map(product => product.name).sort(),
+         };
+      });
+   };
+
+   render() {
+      // console.log("items: ", this.state.items);
+
+      return (
+         <Layout>
+            <div className="container-fluid container-min-max-width">
+               <h2 className="text-center mt-5 mb-3">
+                  {this.state.category.name}
+               </h2>
+               <div className="w-100 d-flex justify-content-center justify-content-sm-center justify-content-lg-start ">
+                  <button
+                     className="btn btn-info"
+                     onClick={() => this.props.toggleMenuFilter()}
+                  >
+                     Filter/Sort Products
+                  </button>
+               </div>
+               <FiltersMenuOverlay />
+               <ProductFilters
+                  filterProducts={(low, high) => this.filterProducts(low, high)}
+                  sortProductsAscending={this.sortProductsAscending}
+               />
+               <ProductList products={this.state.filteredItems} />
+            </div>
+         </Layout>
+      );
+   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    filtersMenuShowed: state.filtersMenu.filterShow,
-  };
+const mapStateToProps = state => {
+   return {
+      filtersMenuShowed: state.filtersMenu.filterShow,
+   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    toggleMenuFilter: () => dispatch(toggleFilterMenu()),
-  };
+const mapDispatchToProps = dispatch => {
+   return {
+      toggleMenuFilter: () => dispatch(toggleFilterMenu()),
+   };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Category);

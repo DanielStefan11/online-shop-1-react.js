@@ -1,18 +1,18 @@
 footer {
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+   background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
 }
 
 footer svg {
-  width: 24px;
-  height: 24px;
+   width: 24px;
+   height: 24px;
 }
 
 @media (max-width: 768px) {
-  footer > div {
-    flex-direction: column;
-  }
+   footer > div {
+      flex-direction: column;
+   }
 
-  footer .footer-group {
-    margin-bottom: 1.5rem;
-  }
+   footer .footer-group {
+      margin-bottom: 1.5rem;
+   }
 }
