@@ -13,9 +13,7 @@ function Page404() {
             <img src={Page404img} alt="404" />
             <h3>Sorry, the page does not exist!</h3>
             <Link to="/">
-               <button className="btn btn-outline-dark mt-4">
-                  Back to Home page
-               </button>
+               <button className="btn btn-outline-dark mt-4">Back to Home page</button>
             </Link>
          </div>
       </Layout>

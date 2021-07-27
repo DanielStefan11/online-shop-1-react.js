@@ -9,10 +9,7 @@ import "./Header.css";
 import { connect } from "react-redux";
 import { logoutUser } from "../../redux/user/UserActions";
 import { openMenu } from "../../redux/mobileMenu/MobileMenuActions";
-import {
-   openMenuDropdown,
-   closeMenuDropdown,
-} from "../../redux/menuDropdown/MenuDropdownActions";
+import { openMenuDropdown, closeMenuDropdown } from "../../redux/menuDropdown/MenuDropdownActions";
 // React Icons
 import { AiFillHeart } from "react-icons/ai";
 import { FaShoppingCart } from "react-icons/fa";
@@ -66,42 +63,29 @@ class Header extends React.Component {
                         Home
                      </NavLink>
 
-                     <div
-                        className="h5 mr-3 dropdown-btn"
-                        onMouseEnter={() => this.props.openMenuDropdown()}
-                     >
+                     <div className="h5 mr-3 dropdown-btn" onMouseEnter={() => this.props.openMenuDropdown()}>
                         Products
                         <ArrowDown />
                      </div>
 
                      {this.props.isMenuDropdownOpen && (
-                        <div
-                           className="dropdown-wrapper"
-                           onMouseLeave={() => this.props.closeMenuDropdown()}
-                        >
+                        <div className="dropdown-wrapper" onMouseLeave={() => this.props.closeMenuDropdown()}>
                            {this.state.categories.map((categoryItem, index) => (
                               <div
                                  className="link-item"
                                  key={index}
                                  onClick={() => {
-                                    this.props.history.push(
-                                       `/category/${categoryItem}`
-                                    );
+                                    this.props.history.push(`/category/${categoryItem}`);
                                     this.props.closeMenuDropdown();
                                  }}
                               >
                                  {(() => {
-                                    if (categoryItem === laptops)
-                                       return "Laptops";
-                                    if (categoryItem === smartphones)
-                                       return "Smartphones";
+                                    if (categoryItem === laptops) return "Laptops";
+                                    if (categoryItem === smartphones) return "Smartphones";
                                     if (categoryItem === pcs) return "PCs";
-                                    if (categoryItem === accesories)
-                                       return "Accessories";
-                                    if (categoryItem === smarttvs)
-                                       return "Smart TVs";
-                                    if (categoryItem === cameras)
-                                       return "Photo/Video";
+                                    if (categoryItem === accesories) return "Accessories";
+                                    if (categoryItem === smarttvs) return "Smart TVs";
+                                    if (categoryItem === cameras) return "Photo/Video";
                                  })()}
                               </div>
                            ))}
@@ -131,10 +115,7 @@ class Header extends React.Component {
                      </NavLink>
 
                      {this.props.user ? (
-                        <p
-                           className="logout h5"
-                           onClick={() => this.props.signOut()}
-                        >
+                        <p className="logout h5" onClick={() => this.props.signOut()}>
                            Delogare
                         </p>
                      ) : (
@@ -158,18 +139,13 @@ class Header extends React.Component {
                      <Link to="/favorite" className="d-flex">
                         <AiFillHeart className="ml-2 added-products-icons" />
                         <p className="ml-1 mb-0">
-                           <strong>
-                              {this.props.numberOfFavoriteProducts}
-                           </strong>
+                           <strong>{this.props.numberOfFavoriteProducts}</strong>
                         </p>
                      </Link>
                   </div>
                </div>
 
-               <button
-                  className="menu-icon"
-                  onClick={() => this.props.openMenu()}
-               >
+               <button className="menu-icon" onClick={() => this.props.openMenu()}>
                   <MenuIcon />
                </button>
 

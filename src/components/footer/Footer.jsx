@@ -37,11 +37,7 @@ function Footer() {
             <div className="footer-group">
                <h3 className="h5">More of my work</h3>
                <p className="m-0">
-                  <a
-                     href="https://github.com/DanielStefan11"
-                     target="_blank"
-                     rel="noopener noreferrer"
-                  >
+                  <a href="https://github.com/DanielStefan11" target="_blank" rel="noopener noreferrer">
                      <GitHub className="mr-1 mb-1 footer-icon" />
                      DanielStefan11
                   </a>
@@ -58,9 +54,7 @@ function Footer() {
                </p>
             </div>
          </div>
-         <div className="text-center py-3">
-            &copy; Daniel Ștefan Călin, 2020 - {year}
-         </div>
+         <div className="text-center py-3">&copy; Daniel Ștefan Călin, 2020 - {year}</div>
       </footer>
    );
 }

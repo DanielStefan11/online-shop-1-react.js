@@ -36,10 +36,7 @@ class Home extends React.Component {
                      />
                   ))}
                </div>
-               <ScrollButton
-                  scrollBtnVizibility={scrollBtnVizibility}
-                  handleScrollToTop={() => handleScrollToTop()}
-               />
+               <ScrollButton scrollBtnVizibility={scrollBtnVizibility} handleScrollToTop={() => handleScrollToTop()} />
             </div>
          </Layout>
       );

@@ -33,9 +33,7 @@ class ProductFilters extends React.Component {
    }
 
    getCheckedValue(name) {
-      const selectedFilter = this.state.filters.find(
-         filter => filter.name === name
-      );
+      const selectedFilter = this.state.filters.find(filter => filter.name === name);
       return selectedFilter.checked;
    }
 
@@ -88,10 +86,7 @@ class ProductFilters extends React.Component {
             }
          >
             <div className="w-100 d-flex justify-content-end">
-               <CloseIcon
-                  className="close-icon"
-                  onClick={() => this.props.toggleMenuFilter()}
-               />
+               <CloseIcon className="close-icon" onClick={() => this.props.toggleMenuFilter()} />
             </div>
             <h4 className="text-center mt-4 mb-5 ">Filter Products</h4>
 

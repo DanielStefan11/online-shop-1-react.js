@@ -8,10 +8,7 @@ import { VscClose as CloseIcon } from "react-icons/vsc";
 // redux
 import { connect } from "react-redux";
 import { closeMenu } from "../../redux/mobileMenu/MobileMenuActions";
-import {
-   openMenuDropdown,
-   closeMenuDropdown,
-} from "../../redux/menuDropdown/MenuDropdownActions";
+import { openMenuDropdown, closeMenuDropdown } from "../../redux/menuDropdown/MenuDropdownActions";
 
 const MobileMenu = props => {
    const laptops = "laptops",
@@ -25,16 +22,11 @@ const MobileMenu = props => {
       <div
          className="mobile-menu"
          style={
-            props.isMenuOpen
-               ? { right: "0px", opacity: "0.96" }
-               : { transform: "translateX(1000px)", opacity: "0" }
+            props.isMenuOpen ? { right: "0px", opacity: "0.96" } : { transform: "translateX(1000px)", opacity: "0" }
          }
       >
          <div className="w-100 d-flex justify-content-end">
-            <CloseIcon
-               className="close-icon"
-               onClick={() => props.closeMenu()}
-            />
+            <CloseIcon className="close-icon" onClick={() => props.closeMenu()} />
          </div>
 
          <div className="h-100 d-flex flex-column align-items-center justify-content-center">

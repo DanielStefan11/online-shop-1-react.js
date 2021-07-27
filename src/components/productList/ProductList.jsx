@@ -12,10 +12,7 @@ function ProductList(props) {
          {products?.length <= 0 ? (
             <div className="w-100 d-flex flex-column align-items-center mt-5">
                <h3> We couldn't find any products!</h3>
-               <button
-                  className="btn btn-dark mt-4"
-                  onClick={() => history.push("/")}
-               >
+               <button className="btn btn-dark mt-4" onClick={() => history.push("/")}>
                   Back to Home
                </button>
             </div>

@@ -21,25 +21,14 @@ function Favorites(props) {
          >
             {props.products.length ? (
                <div className="container-fluid">
-                  <h1 className="text-center mb-5 mt-5 mt-sm-5 mt-lg-0">
-                     Produsele tale favorite
-                  </h1>
+                  <h1 className="text-center mb-5 mt-5 mt-sm-5 mt-lg-0">Produsele tale favorite</h1>
                   {props.products.map(product => {
                      return (
-                        <div
-                           key={product.id}
-                           className="favorite-product d-flex justify-content-between mb-5"
-                        >
+                        <div key={product.id} className="favorite-product d-flex justify-content-between mb-5">
                            <div className="favorite-product-info d-flex align-items-center">
-                              <img
-                                 src={product.image}
-                                 alt="Produs favorit"
-                                 className="mr-3"
-                              />
+                              <img src={product.image} alt="Produs favorit" className="mr-3" />
                               <div>
-                                 <h3 className="mt-3 mt-sm-3 mt-lg-0">
-                                    {product.name}
-                                 </h3>
+                                 <h3 className="mt-3 mt-sm-3 mt-lg-0">{product.name}</h3>
                                  <h4 className="mr-lg-3  text-primary font-weight-bold">
                                     {product.price} {product.currency}
                                  </h4>
@@ -73,13 +62,9 @@ function Favorites(props) {
                </div>
             ) : (
                <div className="d-flex flex-column align-items-center justify-content-center">
-                  <p className="h3 text-center">
-                     There are no favorite products
-                  </p>
+                  <p className="h3 text-center">There are no favorite products</p>
                   <Link to="/">
-                     <button className="btn btn-outline-dark">
-                        Back to Home page
-                     </button>
+                     <button className="btn btn-outline-dark">Back to Home page</button>
                   </Link>
                </div>
             )}

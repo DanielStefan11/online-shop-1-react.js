@@ -13,9 +13,7 @@ export function favoritesReducer(state = initialState, action) {
          };
 
       case REMOVE_FROM_FAVORITES:
-         const filteredProducts = state.products.filter(
-            product => product.id !== action.payload.id
-         );
+         const filteredProducts = state.products.filter(product => product.id !== action.payload.id);
          return {
             ...state,
             products: filteredProducts,

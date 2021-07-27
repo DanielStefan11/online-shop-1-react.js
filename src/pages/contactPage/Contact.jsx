@@ -18,11 +18,7 @@ export default function Contact() {
                      <label htmlFor="name">
                         <strong>Name</strong>
                      </label>
-                     <input
-                        type="text"
-                        className="form-control"
-                        placeholder="Introdu numele și prenumele"
-                     />
+                     <input type="text" className="form-control" placeholder="Introdu numele și prenumele" />
                   </div>
                   <div className="form-group">
                      <label htmlFor="subject">
@@ -40,21 +36,13 @@ export default function Contact() {
                      <label htmlFor="email">
                         <strong>Email adress</strong>
                      </label>
-                     <input
-                        type="email"
-                        className="form-control"
-                        placeholder="Introdu Email adress"
-                     />
+                     <input type="email" className="form-control" placeholder="Introdu Email adress" />
                   </div>
                   <div className="form-group">
                      <label htmlFor="message">
                         <strong>Message</strong>
                      </label>
-                     <textarea
-                        className="form-control"
-                        name="message"
-                        rows="5"
-                     ></textarea>
+                     <textarea className="form-control" name="message" rows="5"></textarea>
                   </div>
                   <div className="form-check form-check-inline">
                      <input

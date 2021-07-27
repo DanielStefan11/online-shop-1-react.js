@@ -10,9 +10,7 @@ const Overlay = props => {
       <div
          className="overlay"
          style={
-            props.isMenuOpen
-               ? { left: "0px", opacity: "0.96" }
-               : { transform: "translateX(-2000px)", opacity: "0" }
+            props.isMenuOpen ? { left: "0px", opacity: "0.96" } : { transform: "translateX(-2000px)", opacity: "0" }
          }
          onClick={() => props.closeMenu()}
       ></div>

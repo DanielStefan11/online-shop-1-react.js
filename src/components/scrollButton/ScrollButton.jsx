@@ -9,11 +9,7 @@ export default function ScrollButton(props) {
       <div>
          {scrollBtnVizibility ? (
             <button style={scrollBtn} onClick={() => handleScrollToTop()}>
-               <IoIosArrowDropupCircle
-                  size="3rem"
-                  style={scrollIcon}
-                  onClick={() => handleScrollToTop()}
-               />
+               <IoIosArrowDropupCircle size="3rem" style={scrollIcon} onClick={() => handleScrollToTop()} />
             </button>
          ) : null}
       </div>

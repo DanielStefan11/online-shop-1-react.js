@@ -51,14 +51,9 @@ class Category extends Component {
       return (
          <Layout>
             <div className="container-fluid container-min-max-width">
-               <h2 className="text-center mt-5 mb-3">
-                  {this.state.category.name}
-               </h2>
+               <h2 className="text-center mt-5 mb-3">{this.state.category.name}</h2>
                <div className="w-100 d-flex justify-content-center justify-content-sm-center justify-content-lg-start ">
-                  <button
-                     className="btn btn-info"
-                     onClick={() => this.props.toggleMenuFilter()}
-                  >
+                  <button className="btn btn-info" onClick={() => this.props.toggleMenuFilter()}>
                      Filter/Sort Products
                   </button>
                </div>

@@ -19,13 +19,11 @@ function About(props) {
             <h1 className="text-center mb-5">About us</h1>
             <div className="info">
                <p className="font-weight-bold h4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe
-                  vitae ipsam eos in obcaecati maxime optio id officiis ab
-                  corporis voluptatem fugiat deserunt, veniam ratione odio.
-                  Odit, ut deleniti, delectus repellat perspiciatis nisi animi
-                  praesentium inventore sunt, nulla dolorum. Eligendi officiis
-                  labore cum, esse tempora, expedita officia fuga placeat velit,
-                  dolores eius deleniti nihil exercitationem facere? Tempore.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vitae ipsam eos in obcaecati maxime
+                  optio id officiis ab corporis voluptatem fugiat deserunt, veniam ratione odio. Odit, ut deleniti,
+                  delectus repellat perspiciatis nisi animi praesentium inventore sunt, nulla dolorum. Eligendi officiis
+                  labore cum, esse tempora, expedita officia fuga placeat velit, dolores eius deleniti nihil
+                  exercitationem facere? Tempore.
                </p>
             </div>
             <div className="description">
@@ -34,14 +32,11 @@ function About(props) {
                   <div className="description-card-1">
                      <h5>Over 10 years experience</h5>
                      <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Esse, amet? Consequuntur dignissimos ipsa labore
-                        distinctio quos blanditiis ex nemo minima, expedita
-                        voluptatem repudiandae exercitationem quidem libero
-                        architecto rerum molestiae dolores harum fugit. Pariatur
-                        aliquid, tempore ab temporibus adipisci corrupti quidem
-                        eveniet assumenda illo nam nemo libero aliquam? Sequi,
-                        inventore quidem.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse, amet? Consequuntur dignissimos
+                        ipsa labore distinctio quos blanditiis ex nemo minima, expedita voluptatem repudiandae
+                        exercitationem quidem libero architecto rerum molestiae dolores harum fugit. Pariatur aliquid,
+                        tempore ab temporibus adipisci corrupti quidem eveniet assumenda illo nam nemo libero aliquam?
+                        Sequi, inventore quidem.
                      </p>
                   </div>
                </div>
@@ -50,13 +45,10 @@ function About(props) {
                   <div className="description-card-2">
                      <h5>We give you what you need</h5>
                      <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Nesciunt doloremque aperiam, delectus quam vel eum
-                        doloribus consequatur hic vero. Dolore id neque sequi
-                        iste maiores illo veritatis dolorem! Perferendis ipsa
-                        natus dolorem at libero nobis corrupti magni vero saepe
-                        voluptates, modi veritatis eos ex tempora sed doloremque
-                        possimus consequuntur harum?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt doloremque aperiam, delectus
+                        quam vel eum doloribus consequatur hic vero. Dolore id neque sequi iste maiores illo veritatis
+                        dolorem! Perferendis ipsa natus dolorem at libero nobis corrupti magni vero saepe voluptates,
+                        modi veritatis eos ex tempora sed doloremque possimus consequuntur harum?
                      </p>
                   </div>
                   <img className="ml-5" src={PCImg} alt="pc setup" />
@@ -72,8 +64,7 @@ function About(props) {
                   </li>
                   <li>
                      <ImCheckboxChecked />
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Molestiae, repellendus!
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, repellendus!
                   </li>
                   <li>
                      <ImCheckboxChecked />
@@ -85,8 +76,7 @@ function About(props) {
                   </li>
                   <li>
                      <ImCheckboxChecked />
-                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                     Quos, aliquid ipsam.
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, aliquid ipsam.
                   </li>
                   <li>
                      <ImCheckboxChecked />
@@ -94,8 +84,7 @@ function About(props) {
                   </li>
                   <li>
                      <ImCheckboxChecked />
-                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                     Eligendi!
+                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eligendi!
                   </li>
                   <li>
                      <ImCheckboxChecked />
@@ -109,9 +98,7 @@ function About(props) {
             </div>
 
             <div className="benefits-container">
-               <h3 className="text-center mb-5">
-                  What benefits do we offer you?
-               </h3>
+               <h3 className="text-center mb-5">What benefits do we offer you?</h3>
                <div className="benefits-cards d-flex justify-content-around">
                   <div>
                      <FaTruck size="4rem" color="#0066ff" />
@@ -131,10 +118,7 @@ function About(props) {
                   </div>
                </div>
             </div>
-            <ScrollButton
-               scrollBtnVizibility={scrollBtnVizibility}
-               handleScrollToTop={handleScrollToTop}
-            />
+            <ScrollButton scrollBtnVizibility={scrollBtnVizibility} handleScrollToTop={handleScrollToTop} />
          </div>
       </Layout>
    );

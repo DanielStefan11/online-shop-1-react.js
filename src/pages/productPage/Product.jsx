@@ -10,10 +10,7 @@ import "./Product.css";
 // Redux
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/cart/CartActions";
-import {
-   addToFavorites,
-   removeFromFavorites,
-} from "../../redux/favorites/FavoritesActions";
+import { addToFavorites, removeFromFavorites } from "../../redux/favorites/FavoritesActions";
 
 class Product extends React.Component {
    constructor(props) {
@@ -39,9 +36,7 @@ class Product extends React.Component {
    render() {
       const { product } = this.state;
       const { favoriteProducts } = this.props;
-      const foundProduct = favoriteProducts.find(
-         favoriteProduct => favoriteProduct.id === product.id
-      );
+      const foundProduct = favoriteProducts.find(favoriteProduct => favoriteProduct.id === product.id);
 
       return (
          <Layout>
@@ -98,12 +93,10 @@ class Product extends React.Component {
                         )}
                      </div>
                      <p>
-                        <span className="font-weight-bold">Brand</span>:{" "}
-                        {product.brand}
+                        <span className="font-weight-bold">Brand</span>: {product.brand}
                      </p>
                      <p>
-                        <span className="font-weight-bold">Color:</span>{" "}
-                        {product.colour}
+                        <span className="font-weight-bold">Color:</span> {product.colour}
                      </p>
                      <p className="font-weight-bold mb-1">Specifications:</p>
                      <p>{product.description}</p>

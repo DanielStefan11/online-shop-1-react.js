@@ -40,11 +40,7 @@ class Login extends React.Component {
                className="btn btn-outline-dark d-flex align-items-center py-2 mt-3"
                onClick={() => this.props.signInWithFacebook()}
             >
-               <FaFacebook
-                  className="w-50 mr-1.8"
-                  size="2.5rem"
-                  color="#0D88F0"
-               />
+               <FaFacebook className="w-50 mr-1.8" size="2.5rem" color="#0D88F0" />
                <span className="text-nowrap">Login with Facebook</span>
             </button>
          </div>

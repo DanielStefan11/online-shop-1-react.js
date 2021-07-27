@@ -6,26 +6,18 @@ import "./ProductItem.css";
 // Redux
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/cart/CartActions";
-import {
-   addToFavorites,
-   removeFromFavorites,
-} from "../../redux/favorites/FavoritesActions";
+import { addToFavorites, removeFromFavorites } from "../../redux/favorites/FavoritesActions";
 // React Icons
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FaShoppingCart as CartICon } from "react-icons/fa";
 
 function ProductItem(props) {
    const { name, price, currency, image, id, favoriteProducts } = props;
-   const foundProduct = favoriteProducts.find(
-      favoriteProduct => favoriteProduct.id === id
-   );
+   const foundProduct = favoriteProducts.find(favoriteProduct => favoriteProduct.id === id);
 
    return (
       <div className="product-item col-12 col-md-4 mb-3 d-flex flex-column align-items-center">
-         <Link
-            to={`/product/${id}`}
-            className="d-flex flex-column align-items-center"
-         >
+         <Link to={`/product/${id}`} className="d-flex flex-column align-items-center">
             <img src={image} alt="productPhoto" className="mb-2" />
             <p className="mb-1 text-center h5">
                <strong>{name}</strong>{" "}
