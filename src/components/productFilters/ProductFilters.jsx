@@ -62,6 +62,7 @@ class ProductFilters extends React.Component {
          }
       });
       this.setState({ filters: modifiedFilters });
+      this.props.toggleMenuFilter();
    }
 
    changeProducts(event, lowerLimit, upperLimit) {
@@ -98,10 +99,7 @@ class ProductFilters extends React.Component {
                      name="lessThan5000"
                      checked={this.getCheckedValue("lessThan5000")}
                      className="mr-2"
-                     onChange={event => {
-                        this.changeProducts(event, 0, 5000);
-                        this.props.toggleMenuFilter();
-                     }}
+                     onChange={event => this.changeProducts(event, 0, 5000)}
                   />
                   {`< 5000 Lei`}
                </label>
@@ -111,10 +109,7 @@ class ProductFilters extends React.Component {
                      name="moreThan5000"
                      checked={this.getCheckedValue("moreThan5000")}
                      className="mr-2"
-                     onChange={event => {
-                        this.changeProducts(event, 5000, Infinity);
-                        this.props.toggleMenuFilter();
-                     }}
+                     onChange={event => this.changeProducts(event, 5000, Infinity)}
                   />
                   {`> 5000 Lei`}
                </label>
@@ -124,17 +119,20 @@ class ProductFilters extends React.Component {
                <h5 className="mb-3">Sort by Name:</h5>
                <label className="mb-3">
                   <input
-                     type="checkbox"
+                     type="radio"
                      name="ascendFilter"
                      checked={this.getCheckedValue("ascendFilter")}
                      className="mr-2"
-                     onChange={sortProductsAscending}
+                     onChange={event => {
+                        sortProductsAscending();
+                        this.handleCheckboxUiChange(event.target.name);
+                     }}
                   />
                   A - Z
                </label>
                <label className="mb-3">
                   <input
-                     type="checkbox"
+                     type="radio"
                      name="descendFilter"
                      checked={this.getCheckedValue("descendFilter")}
                      className="mr-2"

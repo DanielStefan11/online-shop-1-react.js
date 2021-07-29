@@ -40,7 +40,15 @@ class Category extends Component {
    sortProductsAscending = () => {
       this.setState(prevState => {
          return {
-            filteredItems: prevState.items.map(product => product.name).sort(),
+            items: [
+               ...prevState.items.sort((a, b) => {
+                  let value1 = a.name.toLowerCase();
+                  let value2 = b.name.toLowerCase();
+                  if (value1 < value2) return -1;
+                  if (value1 > value2) return 1;
+                  return 0;
+               }),
+            ],
          };
       });
    };
