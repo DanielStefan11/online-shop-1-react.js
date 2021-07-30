@@ -53,9 +53,39 @@ class Category extends Component {
       });
    };
 
-   render() {
-      // console.log("items: ", this.state.items);
+   sortProductsDescending = () => {
+      this.setState(prevState => {
+         return {
+            items: [
+               ...prevState.items.sort((a, b) => {
+                  let value1 = a.name.toLowerCase();
+                  let value2 = b.name.toLowerCase();
+                  if (value1 > value2) return -1;
+                  if (value1 < value2) return 1;
+                  return 0;
+               }),
+            ],
+         };
+      });
+   };
 
+   sortByPriceAscending = () => {
+      this.setState(prevState => {
+         return {
+            items: [...prevState.items.sort((a, b) => a.price - b.price)],
+         };
+      });
+   };
+
+   sortByPriceDescending = () => {
+      this.setState(prevState => {
+         return {
+            items: [...prevState.items.sort((a, b) => b.price - a.price)],
+         };
+      });
+   };
+
+   render() {
       return (
          <Layout>
             <div className="container-fluid container-min-max-width">
@@ -69,6 +99,9 @@ class Category extends Component {
                <ProductFilters
                   filterProducts={(low, high) => this.filterProducts(low, high)}
                   sortProductsAscending={this.sortProductsAscending}
+                  sortProductsDescending={this.sortProductsDescending}
+                  sortByPriceAscending={this.sortByPriceAscending}
+                  sortByPriceDescending={this.sortByPriceDescending}
                />
                <ProductList products={this.state.filteredItems} />
             </div>

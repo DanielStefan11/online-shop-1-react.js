@@ -21,6 +21,14 @@ class ProductFilters extends React.Component {
                checked: false,
             },
             {
+               name: "ascendingPrice",
+               checked: false,
+            },
+            {
+               name: "descendingPrice",
+               checked: false,
+            },
+            {
                name: "moreThan5000",
                checked: false,
             },
@@ -75,7 +83,7 @@ class ProductFilters extends React.Component {
    }
 
    render() {
-      const { sortProductsAscending } = this.props;
+      const { sortProductsAscending, sortProductsDescending, sortByPriceAscending, sortByPriceDescending } = this.props;
 
       return (
          <div
@@ -113,6 +121,32 @@ class ProductFilters extends React.Component {
                   />
                   {`> 5000 Lei`}
                </label>
+               <label className="mb-3">
+                  <input
+                     type="checkbox"
+                     name="ascendingPrice"
+                     checked={this.getCheckedValue("ascendingPrice")}
+                     className="mr-2"
+                     onChange={event => {
+                        sortByPriceAscending();
+                        this.handleCheckboxUiChange(event.target.name);
+                     }}
+                  />
+                  {`Low - High`}
+               </label>
+               <label className="mb-3">
+                  <input
+                     type="checkbox"
+                     name="descendingPrice"
+                     checked={this.getCheckedValue("descendingPrice")}
+                     className="mr-2"
+                     onChange={event => {
+                        sortByPriceDescending();
+                        this.handleCheckboxUiChange(event.target.name);
+                     }}
+                  />
+                  {`High - Low`}
+               </label>
             </div>
 
             <div className="w-100 d-flex flex-column mb-5">
@@ -136,6 +170,10 @@ class ProductFilters extends React.Component {
                      name="descendFilter"
                      checked={this.getCheckedValue("descendFilter")}
                      className="mr-2"
+                     onChange={event => {
+                        sortProductsDescending();
+                        this.handleCheckboxUiChange(event.target.name);
+                     }}
                   />
                   Z - A
                </label>
