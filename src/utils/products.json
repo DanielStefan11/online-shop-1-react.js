@@ -10,7 +10,7 @@
             "brand": "Apple",
             "colour": "Silver",
             "description": "Procesor Intel Core i9 2.30 GHz, 16GB, 1TB SSD, Radeon Pro 5500M 4GB, Silver, INT KB",
-            "stock": 100
+            "stock": 10
          },
          {
             "id": 2,
@@ -21,7 +21,7 @@
             "brand": "Asus",
             "colour": "Blue Metal",
             "description": "Procesor AMD Ryzen 5 3500U pana la 3.70 GHz, 14 inch, Full HD, 8GB, 1TB SSD, AMD Radeon™ Vega 8 Graphics, Endless OS, Utopia Blue Metal",
-            "stock": 300
+            "stock": 0
          },
          {
             "id": 3,
@@ -43,7 +43,7 @@
             "brand": "Huawei",
             "colour": "Silver",
             "description": "Procesor AMD Ryzen 5 3500U (4M Cache, up to 3.70 GHz), 8GB DDR4, 256GB SSD, Radeon Vega 8, Win 10 Home, Silver",
-            "stock": 800
+            "stock": 8
          },
          {
             "id": 5,
@@ -65,7 +65,7 @@
             "brand": "Asus",
             "colour": "Black",
             "description": "Laptop ASUS Gaming 15.6'' TUF FX505GT, FHD, Procesor Intel® Core™ i5-9300H (8M Cache, up to 4.10 GHz), 8GB DDR4, 512GB SSD, GeForce GTX 1650 4GB, No OS, Black",
-            "stock": 160
+            "stock": 0
          }
       ],
       "image": "https://i.imgur.com/POcOu2g.jpg",
@@ -94,7 +94,7 @@
             "brand": "Samsung",
             "colour": "Cosmic Grey",
             "description": "5G Edition, Octa Core, 128GB, 12GB RAM, Dual SIM, 5-Camere, Cosmic Grey",
-            "stock": 100
+            "stock": 1
          },
          {
             "id": 9,
@@ -105,7 +105,7 @@
             "brand": "Apple",
             "colour": "Silver",
             "description": "64GB stocare, Color Silver",
-            "stock": 300
+            "stock": 0
          },
          {
             "id": 10,
@@ -127,7 +127,7 @@
             "colour": "Aurora Black",
             "brand": "Asus",
             "description": "ASUS ZenFone 7 (ZS670KS), Display Super AMOLED 90Hz, Gorilla Glass 6, Snapdragon 865 Octa Core, 128GB, 8GB RAM, Dual SIM, 5G, FLIP Triplel Camera, Baterie 5000 mAh, Fast charging 30W, Aurora Black",
-            "stock": 700
+            "stock": 7
          },
          {
             "id": 12,
@@ -138,7 +138,7 @@
             "colour": "Cloud Lavender",
             "brand": "Samsung",
             "description": "Samsung Galaxy S20 FE (2020), Octa Core, 128GB, 6GB RAM, Dual SIM, 4G, 4-Camere, Cloud Lavender",
-            "stock": 800
+            "stock": 0
          }
       ],
       "image": "https://i.imgur.com/VmzUPNq.jpg",
@@ -200,7 +200,7 @@
             "colour": "Black",
             "brand": "Intel",
             "description": "Mini Sistem PC Intel (NUC) Next Unit of Computing NUC8i5BEH2, Core i5-8259U 2.3GHz, 2x DDR4 32GB max, M.2 SSD, HDD 2.5 inch, Wi-Fi, Bluetooth, HDMI",
-            "stock": 100
+            "stock": 1
          },
          {
             "id": 18,
@@ -229,7 +229,7 @@
             "colour": "Ice Blue",
             "brand": "JBL",
             "description": "Headphones over-the-ear cu fir",
-            "stock": 100
+            "stock": 0
          },
          {
             "id": 20,
@@ -240,7 +240,7 @@
             "colour": "Black",
             "brand": "Logitech",
             "description": "Keyboard business cu fir pe USB",
-            "stock": 300
+            "stock": 3
          },
          {
             "id": 21,
@@ -273,7 +273,7 @@
             "colour": "Black",
             "brand": "LG",
             "description": "Monitor LED LG Gaming 22MK430H 21.5 inch 5 ms Black FreeSync 75Hz",
-            "stock": 670
+            "stock": 6
          },
          {
             "id": 24,
@@ -313,7 +313,7 @@
             "colour": "Argintiu",
             "brand": "Philips",
             "description": "Televizor LED Philips Smart TV Android 43PUS8505/12 Seria PUS8505/12 108cm argintiu 4K UHD HDR Ambilight cu 3 laturi",
-            "stock": 100
+            "stock": 0
          },
          {
             "id": 27,
@@ -357,7 +357,7 @@
             "colour": "Black",
             "brand": "Diamant",
             "description": "Televizor LED Horizon Diamant 32HL4300H/A Seria HL4300H/A 81cm Black HD Ready",
-            "stock": 100
+            "stock": 0
          }
       ],
       "image": "https://i.imgur.com/cmZnzUw.jpg",
@@ -386,7 +386,7 @@
             "colour": "Black",
             "brand": "Nikon",
             "description": "Mirrorless Nikon Z50 Dual Zoom Kit 16-50mm VR + 50-250mm VR",
-            "stock": 100
+            "stock": 0
          },
          {
             "id": 33,
@@ -397,7 +397,7 @@
             "colour": "Black",
             "brand": "GoPro",
             "description": "GoPro HERO 8 Black Camera de Actiune 4K60",
-            "stock": 100
+            "stock": 1
          },
          {
             "id": 34,
@@ -430,7 +430,7 @@
             "colour": "Srgintiu",
             "brand": "Canon",
             "description": "Mirrorless Canon EOS M100 kit EF-M 15-45mm f/3.5-6.3 IS STM White",
-            "stock": 100
+            "stock": 1
          }
       ],
       "image": "https://i.imgur.com/PeYI36n.jpg",

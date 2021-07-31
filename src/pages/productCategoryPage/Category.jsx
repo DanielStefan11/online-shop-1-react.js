@@ -20,7 +20,7 @@ class Category extends Component {
       };
    }
 
-   componentDidMount() {
+   componentDidMount = () => {
       const { match } = this.props;
       const categoryName = match.params.categoryName;
       this.setState({
@@ -28,14 +28,14 @@ class Category extends Component {
          items: products[categoryName].items,
          filteredItems: products[categoryName].items,
       });
-   }
+   };
 
-   filterProducts(lowerLimit, upperLimit) {
+   filterProducts = (lowerLimit, upperLimit) => {
       const filteredItems = this.state.items.filter(
          product => product.price >= lowerLimit && product.price < upperLimit
       );
       this.setState({ filteredItems });
-   }
+   };
 
    sortProductsAscending = () => {
       this.setState(prevState => {
@@ -85,6 +85,11 @@ class Category extends Component {
       });
    };
 
+   sortByStock = () => {
+      const filteredItems = this.state.items.filter(product => product.stock > 0);
+      this.setState({ filteredItems });
+   };
+
    render() {
       return (
          <Layout>
@@ -102,6 +107,7 @@ class Category extends Component {
                   sortProductsDescending={this.sortProductsDescending}
                   sortByPriceAscending={this.sortByPriceAscending}
                   sortByPriceDescending={this.sortByPriceDescending}
+                  sortByStock={this.sortByStock}
                />
                <ProductList products={this.state.filteredItems} />
             </div>

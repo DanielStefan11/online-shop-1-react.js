@@ -36,6 +36,10 @@ class ProductFilters extends React.Component {
                name: "lessThan5000",
                checked: false,
             },
+            {
+               name: "stock",
+               checked: false,
+            },
          ],
       };
    }
@@ -83,7 +87,13 @@ class ProductFilters extends React.Component {
    }
 
    render() {
-      const { sortProductsAscending, sortProductsDescending, sortByPriceAscending, sortByPriceDescending } = this.props;
+      const {
+         sortProductsAscending,
+         sortProductsDescending,
+         sortByPriceAscending,
+         sortByPriceDescending,
+         sortByStock,
+      } = this.props;
 
       return (
          <div
@@ -182,7 +192,16 @@ class ProductFilters extends React.Component {
             <div className="w-100 d-flex flex-column mb-5">
                <h5 className="mb-3">In Stock:</h5>
                <label className="mb-3">
-                  <input type="checkbox" className="mr-2" />
+                  <input
+                     type="checkbox"
+                     name="stock"
+                     checked={this.getCheckedValue("stock")}
+                     className="mr-2"
+                     onChange={event => {
+                        sortByStock();
+                        this.handleCheckboxUiChange(event.target.name);
+                     }}
+                  />
                   In stock
                </label>
             </div>

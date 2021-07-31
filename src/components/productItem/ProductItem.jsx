@@ -12,7 +12,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FaShoppingCart as CartICon } from "react-icons/fa";
 
 function ProductItem(props) {
-   const { name, price, currency, image, id, favoriteProducts } = props;
+   const { name, price, currency, image, id, stock, favoriteProducts } = props;
    const foundProduct = favoriteProducts.find(favoriteProduct => favoriteProduct.id === id);
 
    return (
@@ -25,6 +25,7 @@ function ProductItem(props) {
             <p className="text-center text-primary font-weight-bold h5">
                {price} {currency}
             </p>
+            <p className={stock <= 10 ? "text-danger" : "text-success"}>In stock: {stock}</p>
          </Link>
          <button
             className="btn btn-outline-dark mt-2"
