@@ -114,13 +114,7 @@ class ProductFilters extends React.Component {
    };
 
    render() {
-      const {
-         sortProductsAscending,
-         sortProductsDescending,
-         sortByPriceAscending,
-         sortByPriceDescending,
-         sortByStock,
-      } = this.props;
+      const { sortProductsAscending, sortProductsDescending } = this.props;
 
       return (
          <div
