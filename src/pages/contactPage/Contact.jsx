@@ -25,7 +25,7 @@ export default function Contact() {
                         <strong>Subject</strong>
                      </label>
                      <select className="form-control" name="subject">
-                        <option value="1">Informații despre produs</option>
+                        <option value="1">Informații despre Product</option>
                         <option value="2">Informații/livrare comandă </option>
                         <option value="3">Întrebări cu privire la cont </option>
                         <option value="4">Modificare comandă </option>

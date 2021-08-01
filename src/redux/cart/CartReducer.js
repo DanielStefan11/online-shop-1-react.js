@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../reduxConstants";
+import { ADD_TO_CART, REMOVE_FROM_CART, PLACE_ORDER } from "../reduxConstants";
 
 const initialState = {
    products: [],
@@ -35,6 +35,7 @@ export function cartReducer(state = initialState, action) {
                products: updatedProducts,
             });
          }
+
       case REMOVE_FROM_CART:
          const filteredProducts = state.products.filter(product => {
             return product.id !== action.payload.id;
@@ -43,6 +44,10 @@ export function cartReducer(state = initialState, action) {
          return Object.assign({}, state, {
             products: filteredProducts,
          });
+
+      case PLACE_ORDER:
+         return initialState;
+         
       default:
          return state;
    }

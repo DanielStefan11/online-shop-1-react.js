@@ -16,9 +16,9 @@ function About(props) {
    return (
       <Layout>
          <div className="about-page d-flex flex-column align-items-center">
-            <h1 className="text-center mb-5">About us</h1>
+            <h1 className="text-center my-5">About us</h1>
             <div className="info">
-               <p className="font-weight-bold h4">
+               <p className="font-weight-lighter">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe vitae ipsam eos in obcaecati maxime
                   optio id officiis ab corporis voluptatem fugiat deserunt, veniam ratione odio. Odit, ut deleniti,
                   delectus repellat perspiciatis nisi animi praesentium inventore sunt, nulla dolorum. Eligendi officiis
@@ -28,7 +28,7 @@ function About(props) {
             </div>
             <div className="description">
                <div className="description-containers d-flex align-items-center">
-                  <img className="mr-5" src={LaptopImg} alt="experienta" />
+                  <img className="mr-0 mr-lg-5" src={LaptopImg} alt="experienta" />
                   <div className="description-card-1">
                      <h5>Over 10 years experience</h5>
                      <p>
@@ -51,13 +51,13 @@ function About(props) {
                         modi veritatis eos ex tempora sed doloremque possimus consequuntur harum?
                      </p>
                   </div>
-                  <img className="ml-5" src={PCImg} alt="pc setup" />
+                  <img className="ml-0 ml-lg-5" src={PCImg} alt="pc setup" />
                </div>
             </div>
 
-            <div>
+            <div className="container">
                <h3 className="mb-5 text-center">Why choose us?</h3>
-               <ul className="h5">
+               <ul className="h5 pl-0">
                   <li>
                      <ImCheckboxChecked />
                      Lorem ipsum dolor sit amet.

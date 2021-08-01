@@ -11,6 +11,8 @@ import "./Product.css";
 import { connect } from "react-redux";
 import { addToCart } from "../../redux/cart/CartActions";
 import { addToFavorites, removeFromFavorites } from "../../redux/favorites/FavoritesActions";
+// react toast
+import { toast } from "react-toastify";
 
 class Product extends React.Component {
    constructor(props) {
@@ -63,6 +65,7 @@ class Product extends React.Component {
                                     image: product.image,
                                  },
                               });
+                              toast.info(`The product '${product.name}' has been added to cart`);
                            }}
                         >
                            Add to cart
@@ -73,6 +76,7 @@ class Product extends React.Component {
                               className="btn btn-dark mb-4 font-weight-bold"
                               onClick={() => {
                                  this.props.addToFavorites(product);
+                                 toast.info(`The product '${product.name}' has been added to favorites`);
                               }}
                            >
                               Add to favorites
@@ -85,6 +89,7 @@ class Product extends React.Component {
                                  this.props.removeFromFavorites({
                                     id: product.id,
                                  });
+                                 toast.dark(`The product '${product.name}' has been removed from favorites`);
                               }}
                            >
                               Remove from favorites

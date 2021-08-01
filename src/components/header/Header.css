@@ -11,7 +11,16 @@ header .logo {
 
 header .logout:hover {
    cursor: pointer;
-   text-decoration: underline;
+}
+
+.loged-user {
+   max-height: 50px !important;
+}
+
+.login-link,
+.logout {
+   font-weight: 900;
+   text-decoration: none;
 }
 
 .added-products-icons {
@@ -87,6 +96,11 @@ header .logout:hover {
 
 .close-icon {
    font-size: 1.3rem;
+}
+
+.logging-btn {
+   width: 100%;
+   max-width: 120px;
 }
 
 /* Media queries */

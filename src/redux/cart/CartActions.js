@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../reduxConstants";
+import { ADD_TO_CART, REMOVE_FROM_CART, PLACE_ORDER } from "../reduxConstants";
 
 export function addToCart(payload) {
    return {
@@ -13,3 +13,9 @@ export function removeFromCart(payload) {
       payload,
    };
 }
+
+export const placeOrder = () => {
+   return {
+      type: PLACE_ORDER,
+   };
+};

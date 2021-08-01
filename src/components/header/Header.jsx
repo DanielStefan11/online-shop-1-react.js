@@ -20,6 +20,8 @@ import MobileMenu from "./MobileMenu";
 import Overlay from "./Overlay";
 // products data
 import products from "../../utils/products.json";
+// react toast
+import { toast } from "react-toastify";
 
 class Header extends React.Component {
    constructor(props) {
@@ -115,11 +117,21 @@ class Header extends React.Component {
                      </NavLink>
 
                      {this.props.user ? (
-                        <p className="logout h5" onClick={() => this.props.signOut()}>
-                           Delogare
+                        <p
+                           className="logout h5 text-info"
+                           onClick={() => {
+                              try {
+                                 this.props.signOut();
+                                 toast.dark("You have been successfuly loged out");
+                              } catch (error) {
+                                 toast.error("Something went wrong");
+                              }
+                           }}
+                        >
+                           Logout
                         </p>
                      ) : (
-                        <Link to="/login" className="h5 mb-0">
+                        <Link to="/login" className="h5 mb-0 text-info login-link">
                            Login
                         </Link>
                      )}

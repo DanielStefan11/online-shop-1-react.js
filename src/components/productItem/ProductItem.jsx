@@ -10,6 +10,8 @@ import { addToFavorites, removeFromFavorites } from "../../redux/favorites/Favor
 // React Icons
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { FaShoppingCart as CartICon } from "react-icons/fa";
+// react toast
+import { toast } from "react-toastify";
 
 function ProductItem(props) {
    const { name, price, currency, image, id, stock, favoriteProducts } = props;
@@ -33,7 +35,7 @@ function ProductItem(props) {
          </Link>
          <button
             className="btn btn-outline-dark mt-2"
-            onClick={() =>
+            onClick={() => {
                props.addToCart({
                   product: {
                      id,
@@ -42,8 +44,9 @@ function ProductItem(props) {
                      currency,
                      image,
                   },
-               })
-            }
+               });
+               toast.info(`The product '${name}' has been added to cart`);
+            }}
          >
             Add to cart
             <CartICon className="ml-2 mb-0 h5" />
@@ -54,26 +57,28 @@ function ProductItem(props) {
                   className="favorites-btn"
                   size="2rem"
                   color="#ff0f0f"
-                  onClick={() =>
+                  onClick={() => {
                      props.addToFavorites({
                         id,
                         name,
                         price,
                         currency,
                         image,
-                     })
-                  }
+                     });
+                     toast.info(`The product '${name}' has been added to favorites`);
+                  }}
                />
             ) : (
                <AiFillHeart
                   className="favorites-btn"
                   size="2rem"
                   color="#ff0f0f"
-                  onClick={() =>
+                  onClick={() => {
                      props.removeFromFavorites({
                         id,
-                     })
-                  }
+                     });
+                     toast.dark(`The product '${name}' has been removed from favorites`);
+                  }}
                />
             )}
          </div>

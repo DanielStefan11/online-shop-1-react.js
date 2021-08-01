@@ -2,7 +2,7 @@ import React from "react";
 // style
 import "./Header.css";
 // React Router
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 // components
 import { VscClose as CloseIcon } from "react-icons/vsc";
 // redux
@@ -88,13 +88,13 @@ const MobileMenu = props => {
             </NavLink>
 
             {props.user ? (
-               <p className="logout h5" onClick={() => props.signOut()}>
-                  Delogare
-               </p>
+               <button className="btn btn-info logging-btn" onClick={() => props.signOut()}>
+                  Logout
+               </button>
             ) : (
-               <Link to="/login" className="h5 mb-0">
+               <button className="btn btn-info logging-btn" onClick={() => props.history.push("/login")}>
                   Login
-               </Link>
+               </button>
             )}
          </div>
       </div>
@@ -117,4 +117,4 @@ const mapDispatchToProps = dispatch => {
    };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(MobileMenu);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MobileMenu));

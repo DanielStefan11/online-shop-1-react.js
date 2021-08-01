@@ -11,6 +11,8 @@ import { connect } from "react-redux";
 import { loginUser, loginWithFacebook } from "../../redux/user/UserActions";
 // React Icons
 import { FaFacebook } from "react-icons/fa";
+// react toast
+import { toast } from "react-toastify";
 
 class Login extends React.Component {
    componentDidUpdate(prevProps) {
@@ -32,7 +34,14 @@ class Login extends React.Component {
 
                <button
                   className="btn btn-outline-dark d-flex align-items-center login-btns"
-                  onClick={() => this.props.signInWithGoogle()}
+                  onClick={() => {
+                     try {
+                        this.props.signInWithGoogle();
+                        toast.success("You have been successfuly loged in");
+                     } catch (error) {
+                        toast.error("Something went wrong");
+                     }
+                  }}
                >
                   <Google className="w-50 mr-3" />
                   <span className="text-nowrap">Login with Google</span>

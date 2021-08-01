@@ -4,11 +4,13 @@ import Layout from "../../components/layout/Layout";
 import { BsFillTrashFill as RemoveIcon } from "react-icons/bs";
 // Redux
 import { connect } from "react-redux";
-import { removeFromCart } from "../../redux/cart/CartActions";
+import { removeFromCart, placeOrder } from "../../redux/cart/CartActions";
 // React Router
 import { Link } from "react-router-dom";
 // CSS
 import "./Cart.css";
+// react toastify
+import { toast } from "react-toastify";
 
 function Cart(props) {
    const totalSum = products => {
@@ -26,16 +28,16 @@ function Cart(props) {
             {props.products.length ? (
                <div className="container-fluid">
                   <div className="cart-info d-flex justify-content-between text-center h4 text-bold">
-                     <p className="w-25">Produs</p>
-                     <p className="w-25">Pret</p>
-                     <p className="w-25">Cantitate</p>
+                     <p className="w-25">Product</p>
+                     <p className="w-25">Price</p>
+                     <p className="w-25">Quantity</p>
                      <p className="w-25">Total</p>
                   </div>
                   {props.products.map(product => {
                      return (
                         <div className="d-flex justify-content-between align-items-center text-center" key={product.id}>
                            <div className="w-25 d-flex flex-column justify-content-center align-items-center">
-                              <img src={product.image} alt="Produs" />
+                              <img src={product.image} alt="Product" />
                               <p>{product.name}</p>
                            </div>
                            <p className="w-25">
@@ -58,17 +60,24 @@ function Cart(props) {
                   })}
                   <div className="d-flex justify-content-end border-top">
                      <div className="w-25 d-flex align-items-center justify-content-center">
-                        <p className="my-4 text-center font-weight-bold">Total de plată: </p>
+                        <p className="my-4 text-center font-weight-bold">Total payment: </p>
                      </div>
                      <div className="w-25 d-flex flex-column">
                         <p className="my-4 text-center">
                            {totalSum(props.products)} {props.products[0].currency}
                         </p>
-                        {/* <button className="btn btn-primary">Plasează comanda</button> */}
                      </div>
                   </div>
                   <div className="w-100 d-flex justify-content-center">
-                     <button className="btn btn-primary">Plasează comanda</button>
+                     <button
+                        className="btn btn-primary"
+                        onClick={() => {
+                           props.placeOrder();
+                           toast.success("The order was successfuly placed");
+                        }}
+                     >
+                        Order Now
+                     </button>
                   </div>
                </div>
             ) : (
@@ -93,6 +102,7 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
    return {
       removeFromCart: payload => dispatch(removeFromCart(payload)),
+      placeOrder: payload => dispatch(placeOrder(payload)),
    };
 }
 

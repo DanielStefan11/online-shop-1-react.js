@@ -15,6 +15,9 @@ import Favorites from "./pages/favoriteProducts/Favorites";
 import Product from "./pages/productPage/Product";
 import TermsAndConditions from "./pages/terms&conditionsPage/TermsAndConditions";
 import Contact from "./pages/contactPage/Contact";
+// react toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 class App extends React.Component {
    constructor() {
@@ -48,6 +51,7 @@ class App extends React.Component {
    render() {
       return (
          <div className="app">
+            <ToastContainer />
             <Switch>
                <Route
                   exact
@@ -83,11 +87,7 @@ class App extends React.Component {
                      />
                   )}
                />
-               <Route
-                  exact
-                  path="/category/:categoryName"
-                  component={Category}
-               />
+               <Route exact path="/category/:categoryName" component={Category} />
                <Route exact path="/product/:productId" component={Product} />
                <Route exact path="*" component={Page404} />
             </Switch>

@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 
 const LoggingMessage = props => {
    return (
-      <div className="w-100 bg-primary text-white py-2 d-flex justify-content-center align-items-center">
-         <p className="mb-0">Salut, {props.user.displayName}!</p>
+      <div className="w-100 bg-primary text-white py-2 d-flex justify-content-center align-items-center loged-user">
+         <p className="mb-0">Hi, {props.user.displayName}!</p>
       </div>
    );
 };
