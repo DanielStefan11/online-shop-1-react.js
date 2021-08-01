@@ -86,6 +86,33 @@ class ProductFilters extends React.Component {
       this.handleCheckboxUiChange(event.target.name);
    }
 
+   changeLowToHigh = event => {
+      if (event.target.checked) {
+         this.props.sortByPriceAscending();
+      } else {
+         this.props.returnInitialProducts();
+      }
+      this.handleCheckboxUiChange(event.target.name);
+   };
+
+   changeHighToLow = event => {
+      if (event.target.checked) {
+         this.props.sortByPriceDescending();
+      } else {
+         this.props.returnInitialProducts();
+      }
+      this.handleCheckboxUiChange(event.target.name);
+   };
+
+   changeProdByStock = event => {
+      if (event.target.checked) {
+         this.props.sortByStock();
+      } else {
+         this.props.returnInitialProducts();
+      }
+      this.handleCheckboxUiChange(event.target.name);
+   };
+
    render() {
       const {
          sortProductsAscending,
@@ -137,10 +164,7 @@ class ProductFilters extends React.Component {
                      name="ascendingPrice"
                      checked={this.getCheckedValue("ascendingPrice")}
                      className="mr-2"
-                     onChange={event => {
-                        sortByPriceAscending();
-                        this.handleCheckboxUiChange(event.target.name);
-                     }}
+                     onChange={event => this.changeLowToHigh(event)}
                   />
                   {`Low - High`}
                </label>
@@ -150,10 +174,7 @@ class ProductFilters extends React.Component {
                      name="descendingPrice"
                      checked={this.getCheckedValue("descendingPrice")}
                      className="mr-2"
-                     onChange={event => {
-                        sortByPriceDescending();
-                        this.handleCheckboxUiChange(event.target.name);
-                     }}
+                     onChange={event => this.changeHighToLow(event)}
                   />
                   {`High - Low`}
                </label>
@@ -197,10 +218,7 @@ class ProductFilters extends React.Component {
                      name="stock"
                      checked={this.getCheckedValue("stock")}
                      className="mr-2"
-                     onChange={event => {
-                        sortByStock();
-                        this.handleCheckboxUiChange(event.target.name);
-                     }}
+                     onChange={event => this.changeProdByStock(event)}
                   />
                   In stock
                </label>
