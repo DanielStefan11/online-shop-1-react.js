@@ -1,6 +1,6 @@
 import React from "react";
 // Data
-import products from "../../utils/products.json";
+// import products from "../../utils/products.json";
 // Components
 import Layout from "../../components/layout/Layout";
 import { FaShoppingCart as CartICon } from "react-icons/fa";
@@ -13,26 +13,41 @@ import { addToCart } from "../../redux/cart/CartActions";
 import { addToFavorites, removeFromFavorites } from "../../redux/favorites/FavoritesActions";
 // react toast
 import { toast } from "react-toastify";
+// axios
+import axios from "axios";
 
 class Product extends React.Component {
    constructor(props) {
       super(props);
       this.state = {
-         product: {},
+         product: {
+            image: [
+               {
+                  url: "",
+               },
+            ],
+         },
       };
    }
 
    componentDidMount() {
       const { match } = this.props;
       const productId = match.params.productId;
-      const categoryValues = Object.values(products);
-      const productItems = categoryValues.reduce((acc, category) => {
-         return [...acc, ...category.items];
-      }, []);
-      const currentProduct = productItems.find(product => {
-         return Number(productId) === product.id;
+
+      axios.get("http://localhost:1337/items").then(res => {
+         const itemsData = res.data;
+
+         let targetedProduct;
+         itemsData.map(productItem => {
+            if (productItem.id === Number(productId)) {
+               targetedProduct = productItem;
+            }
+            return targetedProduct;
+         });
+         this.setState({ product: targetedProduct });
+
+         console.log(this.state.product);
       });
-      this.setState({ product: currentProduct });
    }
 
    render() {
@@ -46,7 +61,7 @@ class Product extends React.Component {
                <h1 className="my-5 h2 text-center">{product.name}</h1>
                <div className="product-info d-flex">
                   <div className="image-wrapper d-flex mr-5">
-                     <img src={product.image} alt="Product presentation" />
+                     <img src={`http://localhost:1337${product.image[0].url}`} alt="Product presentation" />
                   </div>
                   <div className="product-details">
                      <p className="h3 text-primary font-weight-bold text-center text-sm-center text-md-left">

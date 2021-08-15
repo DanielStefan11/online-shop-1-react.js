@@ -9,7 +9,7 @@
             "image": "https://i.imgur.com/8Szu50E.jpg",
             "brand": "Apple",
             "colour": "Silver",
-            "description": "Procesor Intel Core i9 2.30 GHz, 16GB, 1TB SSD, Radeon Pro 5500M 4GB, Silver, INT KB",
+            "description": "Processor Intel Core i9 2.30 GHz, 16GB, 1TB SSD, Radeon Pro 5500M 4GB, Silver, INT KB",
             "stock": 10
          },
          {
@@ -160,7 +160,7 @@
          },
          {
             "id": 14,
-            "name": "Sistem All-In-One ASUS V222FAK",
+            "name": "All-In-One System ASUS V222FAK",
             "price": 3000,
             "currency": "LEI",
             "image": "https://i.imgur.com/OPMLDMK.jpg",
@@ -171,7 +171,7 @@
          },
          {
             "id": 15,
-            "name": "Sistem Office Start A3M8S48",
+            "name": "System Office Start A3M8S48",
             "price": 1200,
             "currency": "LEI",
             "image": "https://i.imgur.com/Nrr4l0V.jpg",
@@ -188,7 +188,7 @@
             "image": "https://i.imgur.com/d9RSV2Z.jpg",
             "colour": "Argintiu",
             "brand": "Apple",
-            "description": "Sistem All-In-One Apple 21.5 inch iMac FHD, Procesor Intel Core i5 2.3GHz Kaby Lake, 8GB, 1TB HDD, Iris Plus 640, Camera Web, Mac OS X El Capitan, INT keyboard",
+            "description": "System All-In-One Apple 21.5 inch iMac FHD, Procesor Intel Core i5 2.3GHz Kaby Lake, 8GB, 1TB HDD, Iris Plus 640, Camera Web, Mac OS X El Capitan, INT keyboard",
             "stock": 100
          },
          {
@@ -228,7 +228,7 @@
             "image": "https://i.imgur.com/9GHQ3dp.jpg",
             "colour": "Ice Blue",
             "brand": "JBL",
-            "description": "Headphones over-the-ear cu fir",
+            "description": "Wireless headphones over-the-ear",
             "stock": 0
          },
          {
@@ -239,7 +239,7 @@
             "image": "https://i.imgur.com/i5g5JUe.jpg",
             "colour": "Black",
             "brand": "Logitech",
-            "description": "Keyboard business cu fir pe USB",
+            "description": "Wired USB Keyboard business",
             "stock": 3
          },
          {
@@ -261,7 +261,7 @@
             "image": "https://i.imgur.com/MKNAM1G.jpg",
             "colour": "Black + gri",
             "brand": "Logitech",
-            "description": "Gamepad Logitech F310 pentru pasionații de jocuri",
+            "description": "Gamepad Logitech F310 for all gamers",
             "stock": 700
          },
          {
@@ -295,68 +295,68 @@
       "items": [
          {
             "id": 25,
-            "name": "Televizor LED Samsung Smart",
+            "name": "LED Samsung Smart Tv",
             "price": 1700,
             "currency": "LEI",
             "image": "https://i.imgur.com/YlrTBG7.jpg",
             "colour": "Black",
             "brand": "Samsung",
-            "description": "Televizor LED Samsung Smart TV 50RU7102 Seria RU7102 125cm Black 4K UHD HDR",
+            "description": "LED Samsung Smart TV 50RU7102 Serie RU7102 125cm Black 4K UHD HDR",
             "stock": 790
          },
          {
             "id": 26,
-            "name": "Televizor LED Philips Smart TV",
+            "name": "LED Philips Smart TV",
             "price": 2600,
             "currency": "LEI",
             "image": "https://i.imgur.com/jLj3dPE.jpg",
             "colour": "Argintiu",
             "brand": "Philips",
-            "description": "Televizor LED Philips Smart TV Android 43PUS8505/12 Seria PUS8505/12 108cm argintiu 4K UHD HDR Ambilight cu 3 laturi",
+            "description": "LED Philips Smart TV Android 43PUS8505/12 Serie PUS8505/12 108cm argintiu 4K UHD HDR Ambilight",
             "stock": 0
          },
          {
             "id": 27,
-            "name": "Televizor LED LG Smart TV 4K",
+            "name": "LED LG Smart TV 4K",
             "price": 4000,
             "currency": "LEI",
             "image": "https://i.imgur.com/oQKWVgY.jpg",
             "colour": "Gri, Black",
             "brand": "LG",
-            "description": "Televizor LED LG Smart TV 55UN80003LA Seria UN8000 139cm gri-Black 4K UHD HDR",
+            "description": "LED LG Smart TV 55UN80003LA Serie UN8000 139cm Silver-Black 4K UHD HDR",
             "stock": 100
          },
          {
             "id": 28,
-            "name": "Sistem Home Cinema Samsung",
+            "name": "System Home Cinema Samsung",
             "price": 1000,
             "currency": "LEI",
             "image": "https://i.imgur.com/kcsf47j.jpg",
             "colour": "Black",
             "brand": "Samsung",
-            "description": "Sistem Home Cinema Samsung HW-R450 2.1 Black care îți aduce acasă experiența audio din cinema",
+            "description": "System Home Cinema Samsung HW-R450 2.1 Black",
             "stock": 100
          },
          {
             "id": 29,
-            "name": "Televizor LED Philips",
+            "name": "LED Philips Tv",
             "price": 1300,
             "currency": "LEI",
             "image": "https://i.imgur.com/oPW88PF.jpg",
             "colour": "Black",
             "brand": "Philips",
-            "description": "Televizor LED Philips Smart TV 32PHS6605/12 Seria PHS6605/12 80cm Black HD Ready",
+            "description": "LED Philips Smart TV 32PHS6605/12 Serie PHS6605/12 80cm Black HD Ready",
             "stock": 100
          },
          {
             "id": 30,
-            "name": "Televizor LED Horizon Diamant",
+            "name": "LED Horizon Diamant Tv",
             "price": 800,
             "currency": "LEI",
             "image": "https://i.imgur.com/7DPbmqB.jpg",
             "colour": "Black",
             "brand": "Diamant",
-            "description": "Televizor LED Horizon Diamant 32HL4300H/A Seria HL4300H/A 81cm Black HD Ready",
+            "description": "LED Horizon Diamant 32HL4300H/A Serie HL4300H/A 81cm Black HD Ready",
             "stock": 0
          }
       ],
@@ -374,7 +374,7 @@
             "image": "https://i.imgur.com/1H5uhkH.jpg",
             "colour": "Black",
             "brand": "Nikon",
-            "description": "D-SLR Nikon D7500 Black + Obiectiv AF-S DX 18-140mm f/3.5-5.6G VR Nikkor",
+            "description": "D-SLR Nikon D7500 Black + Lens AF-S DX 18-140mm f/3.5-5.6G VR Nikkor",
             "stock": 100
          },
          {
@@ -396,7 +396,7 @@
             "image": "https://i.imgur.com/cx6aQcO.png",
             "colour": "Black",
             "brand": "GoPro",
-            "description": "GoPro HERO 8 Black Camera de Actiune 4K60",
+            "description": "GoPro HERO 8 Black Action Camera 4K60",
             "stock": 1
          },
          {
@@ -418,7 +418,7 @@
             "image": "https://i.imgur.com/opfHMPm.jpg",
             "colour": "Black + argintiu",
             "brand": "Olympus",
-            "description": "Mirrorless Olympus E-M10 Mark III argintiu + EZ-M1442 IIR argintiu",
+            "description": "Mirrorless Olympus E-M10 Mark III Silver + EZ-M1442 IIR Silver",
             "stock": 100
          },
          {
