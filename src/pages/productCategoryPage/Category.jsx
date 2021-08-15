@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // Data
-import products from "../../utils/products.json";
+// import products from "../../utils/products.json";
 // Components
 import Layout from "../../components/layout/Layout";
 import ProductList from "../../components/productList/ProductList";
@@ -9,12 +9,14 @@ import FiltersMenuOverlay from "../../components/productFilters/FiltersMenuOverl
 // redux
 import { connect } from "react-redux";
 import { toggleFilterMenu } from "../../redux/filters/FiltersActions";
+// axios
+import axios from "axios";
 
 class Category extends Component {
    constructor(props) {
       super(props);
       this.state = {
-         category: {},
+         category: null,
          items: [],
          filteredItems: [],
       };
@@ -23,10 +25,23 @@ class Category extends Component {
    componentDidMount = () => {
       const { match } = this.props;
       const categoryName = match.params.categoryName;
-      this.setState({
-         category: products[categoryName],
-         items: products[categoryName].items,
-         filteredItems: products[categoryName].items,
+
+      axios.get("http://localhost:1337/categories").then(res => {
+         const categories = res.data;
+
+         let targetedItems;
+         categories.map(categoryElement => {
+            if (categoryElement.name === categoryName) {
+               return (targetedItems = categoryElement.items);
+            }
+            return targetedItems;
+         });
+
+         this.setState({
+            category: categoryName,
+            items: targetedItems,
+            filteredItems: targetedItems,
+         });
       });
    };
 
@@ -100,7 +115,7 @@ class Category extends Component {
       return (
          <Layout>
             <div className="container-fluid container-min-max-width">
-               <h2 className="text-center mt-5 mb-3">{this.state.category.name}</h2>
+               <h2 className="text-center mt-5 mb-3 text-capitalize">{this.state.category}</h2>
                <div className="w-100 d-flex justify-content-center justify-content-sm-center justify-content-lg-start ">
                   <button className="btn btn-info" onClick={() => this.props.toggleMenuFilter()}>
                      Filter/Sort Products
