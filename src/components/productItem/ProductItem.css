@@ -1,22 +1,22 @@
 .product-item {
-  position: relative;
-  padding: 1.5rem;
-  transition: all 0.4s ease-in-out;
+   position: relative;
+   padding: 1.5rem;
+   transition: all 0.4s ease-in-out;
 }
 
 .product-item:hover {
-  box-shadow: inset 1px 0px 16px 4px rgba(175, 225, 249, 0.6);
-  border-radius: 10px;
+   box-shadow: inset 1px 0px 16px 4px rgba(175, 225, 249, 0.6);
+   border-radius: 10px;
 }
 
 .product-item img {
-  max-width: 250px;
-  max-height: 250px;
+   max-width: 250px;
+   max-height: 250px;
 }
 
 .favorites-btn-container {
-  cursor: pointer;
-  position: absolute;
-  top: ;
-  right: 40px;
+   cursor: pointer;
+   position: absolute;
+   top: 0;
+   right: 40px;
 }

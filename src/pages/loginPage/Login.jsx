@@ -11,54 +11,65 @@ import { connect } from "react-redux";
 import { loginUser, loginWithFacebook } from "../../redux/user/UserActions";
 // React Icons
 import { FaFacebook } from "react-icons/fa";
+// react toast
+import { toast } from "react-toastify";
 
 class Login extends React.Component {
-  componentDidUpdate(prevProps) {
-    if (this.props.user !== prevProps.user) {
-      this.props.history.push("/");
-    }
-  }
+   componentDidUpdate(prevProps) {
+      if (this.props.user !== prevProps.user) {
+         this.props.history.push("/");
+      }
+   }
 
-  render() {
-    return (
-      <div className="login-page">
-        <Link to="/">
-          <img src={Logo} alt="logo" className="mb-5" />
-        </Link>
+   render() {
+      return (
+         <div className="w-100 d-flex justify-content-center align-items-center login-page">
+            <div className="container d-flex flex-column align-items-center">
+               <Link to="/">
+                  <img src={Logo} alt="logo" className="mb-5" />
+               </Link>
 
-        <h1 className="h2">Login</h1>
-        <p>Alege providerul cu care vrei să vrei să te loghezi:</p>
+               <h1 className="h2">Login</h1>
+               <p>Choose provider you want to login</p>
 
-        <button
-          className="btn btn-outline-dark d-flex align-items-center"
-          onClick={() => this.props.signInWithGoogle()}
-        >
-          <Google className="w-50 mr-3" />
-          <span className="text-nowrap">Loghează-te cu Google</span>
-        </button>
-        <button
-          className="btn btn-outline-dark d-flex align-items-center py-2 mt-3"
-          onClick={() => this.props.signInWithFacebook()}
-        >
-          <FaFacebook className="w-50 mr-1.8" size="2.5rem" color="#0D88F0" />
-          <span className="text-nowrap">Loghează-te cu Facebook</span>
-        </button>
-      </div>
-    );
-  }
+               <button
+                  className="btn btn-outline-dark d-flex align-items-center login-btns"
+                  onClick={() => {
+                     try {
+                        this.props.signInWithGoogle();
+                        toast.success("You have been successfuly loged in");
+                     } catch (error) {
+                        toast.error("Something went wrong");
+                     }
+                  }}
+               >
+                  <Google className="w-50 mr-3" />
+                  <span className="text-nowrap">Login with Google</span>
+               </button>
+               <button
+                  className="btn btn-outline-dark d-flex align-items-center py-2 mt-3 login-btns"
+                  onClick={() => this.props.signInWithFacebook()}
+               >
+                  <FaFacebook className="w-50 mr-1.8" size="2.5rem" color="#0D88F0" />
+                  <span className="text-nowrap">Login with Facebook</span>
+               </button>
+            </div>
+         </div>
+      );
+   }
 }
 
 function mapStateToProps(state) {
-  return {
-    user: state.user.data,
-  };
+   return {
+      user: state.user.data,
+   };
 }
 
 function mapDispatchToProps(dispatch) {
-  return {
-    signInWithGoogle: () => dispatch(loginUser()),
-    signInWithFacebook: () => dispatch(loginWithFacebook()),
-  };
+   return {
+      signInWithGoogle: () => dispatch(loginUser()),
+      signInWithFacebook: () => dispatch(loginWithFacebook()),
+   };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

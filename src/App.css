@@ -1,19 +1,92 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
-  font-family: "Montserrat Alternates", sans-serif;
+   font-family: "Montserrat Alternates", sans-serif;
 }
 
 body a {
-  color: #000;
+   color: #000;
 }
 
 body a:hover {
-  color: #6a8ed9;
-  text-decoration: none;
+   color: #6a8ed9;
+   text-decoration: none;
 }
 body h1,
 h2,
 h3 {
-  font-weight: bold;
+   font-weight: bold;
+}
+
+.filters {
+   /* width: 100%; */
+   width: 150px;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+   h1 {
+      font-size: 2rem;
+   }
+
+   h2 {
+      font-size: 1.8rem;
+   }
+
+   h3 {
+      font-size: 1.5rem;
+   }
+
+   h4 {
+      font-size: 1.2rem;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   h1 {
+      font-size: 1.8rem;
+   }
+
+   h2 {
+      font-size: 1.5rem;
+   }
+
+   h3 {
+      font-size: 1.3rem;
+   }
+
+   h4 {
+      font-size: 1rem;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   h1 {
+      font-size: 1.3rem;
+   }
+
+   h2 {
+      font-size: 1.1rem;
+   }
+
+   h3 {
+      font-size: 1rem;
+   }
+
+   h4 {
+      font-size: 0.75rem;
+   }
+}
+
+@media screen and (max-width: 400px) {
+   .preview-action-wrapper {
+      flex-direction: column !important;
+      align-items: center;
+   }
+}
+
+@media screen and (max-width: 330px) {
+   .filters {
+      width: 100%;
+   }
 }

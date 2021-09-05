@@ -1,31 +1,33 @@
 .favorites-page {
-  position: relative;
+   position: relative;
 }
 
 .favorites-page img {
-  max-height: 150px;
-}
-
-.favourites-container {
-  width: 100%;
+   max-height: 150px;
 }
 
 .delete-btn {
-  cursor: pointer;
-  font-weight: bold;
-  margin-right: 1rem;
+   cursor: pointer;
+   font-weight: bold;
+   margin-right: 1rem;
 }
 
 @media (max-width: 768px) {
-  .favorite-product {
-    flex-direction: column;
-  }
+   .favorite-product {
+      flex-direction: column;
+   }
 
-  .favorite-product-info {
-    flex-direction: column;
-  }
+   .favorite-product-info {
+      flex-direction: column;
+   }
 
-  .favorite-product-btns {
-    justify-content: center;
-  }
+   .favorite-product-btns {
+      justify-content: center;
+   }
+}
+
+@media screen and (min-width: 769px) {
+   .favorite-product {
+      border-bottom: 1px solid #b4e1f7;
+   }
 }

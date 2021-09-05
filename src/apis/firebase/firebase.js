@@ -7,13 +7,13 @@ const googleProvider = new firebase.auth.GoogleAuthProvider();
 const facebookProvider = new firebase.auth.FacebookAuthProvider();
 
 export const signOut = function () {
-  return firebase.auth().signOut();
+   return firebase.auth().signOut();
 };
 
 export const signInWithGoogle = function () {
-  return firebase.auth().signInWithPopup(googleProvider);
+   return firebase.auth().signInWithPopup(googleProvider);
 };
 
 export const signInWithFacebook = function () {
-  return firebase.auth().signInWithPopup(facebookProvider);
+   return firebase.auth().signInWithPopup(facebookProvider);
 };

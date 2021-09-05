@@ -1,0 +1,53 @@
+.filters-overlay {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background: rgba(0, 0, 0, 0.4);
+   z-index: 10;
+   transition: all 0.3s ease-in-out;
+}
+
+.product-filters {
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 20;
+   transition: all 0.3s ease-in-out;
+}
+
+.close-icon {
+   font-size: 1.3rem;
+   cursor: pointer;
+}
+
+label,
+input[type="checkbox"] {
+   cursor: pointer;
+}
+
+/* media queries */
+@media screen and (max-width: 400px) {
+   .product-filters {
+      width: 100%;
+   }
+}
+
+@media screen and (min-width: 401px) and (max-width: 550px) {
+   .product-filters {
+      width: 70%;
+   }
+}
+
+@media screen and (min-width: 551px) and (max-width: 770px) {
+   .product-filters {
+      width: 50%;
+   }
+}
+
+@media screen and (min-width: 771px) {
+   .product-filters {
+      width: 25%;
+   }
+}
