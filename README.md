@@ -2,7 +2,7 @@
 
 Online shop created with React.js.
 
-**Deployed at:** https://tech-store-react.herokuapp.com/
+<!-- **Deployed at:** https://tech-store-react.herokuapp.com/ -->
 
 ## Functionalities:
 
@@ -24,4 +24,4 @@ Online shop created with React.js.
 - Firebase for Logging;
 - Bootstrap + custom CSS3.
 
-**If you clone this repository, you need a Firebase account and use your own data for logging and run the app (+ rename the file firebase.template.js)**
+<!-- **If you clone this repository, you need a Firebase account and use your own data for logging and run the app (+ rename the file firebase.template.js)** -->
